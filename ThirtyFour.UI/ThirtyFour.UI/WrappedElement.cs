@@ -1,10 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Internal;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ThirtyFour.UI
 {
@@ -13,9 +10,9 @@ namespace ThirtyFour.UI
     /// </summary>
     public class WrappedElement
     {
-        protected IWebElement element;
-        protected IWebDriver driver;
-        protected IWebElement parentElement;
+        private IWebElement element;
+        private IWebDriver driver;
+        private IWebElement parentElement;
 
         /// <summary>
         /// The wrapped WebElement
@@ -27,7 +24,7 @@ namespace ThirtyFour.UI
                 return element;
             }
 
-            private set
+            protected set
             {
                 element = value;
             }
@@ -43,7 +40,7 @@ namespace ThirtyFour.UI
                 return driver;
             }
 
-            private set
+            protected set
             {
                 driver = value;
             }
@@ -56,10 +53,10 @@ namespace ThirtyFour.UI
         {
             get
             {
-                return this.GetAncestorElement("*[1]");
+                return GetAncestorElement("*[1]");
             }
 
-            private set
+            protected set
             {
                 parentElement = value;
             }
@@ -71,8 +68,8 @@ namespace ThirtyFour.UI
         /// <param name="element">The wrapped web element</param>
         public WrappedElement(IWebElement element)
         {
-            this.Element = element;
-            this.Driver = ((IWrapsDriver)element).WrappedDriver;
+            Element = element;
+            Driver = ((IWrapsDriver)element).WrappedDriver;
 
         }
 
@@ -86,7 +83,7 @@ namespace ThirtyFour.UI
         public IWebElement GetAncestorElement(string tagName)
         {
             IWebElement parent = null;
-            IReadOnlyCollection<IWebElement> els = this.Element.FindElements(By.XPath("ancestor::" + tagName));
+            IReadOnlyCollection<IWebElement> els = Element.FindElements(By.XPath("ancestor::" + tagName));
             if (els.Count > 0)
             {
                 parent = els.ElementAt(0);
