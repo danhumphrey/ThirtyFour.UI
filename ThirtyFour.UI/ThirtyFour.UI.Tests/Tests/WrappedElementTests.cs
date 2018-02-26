@@ -13,8 +13,8 @@ namespace ThirtyFour.UI.Tests.Tests
         public void ElementPropertyIsSameInstance()
         {
             IWebElement el = driver.FindElement(By.TagName("h1"));
-            WrappedElement wEl = new WrappedElement(el);
-            Assert.AreSame(el, wEl.Element);
+            WrappedElement wrappedEl = new WrappedElement(el);
+            Assert.AreSame(el, wrappedEl.Element);
 
         }
 
@@ -22,44 +22,45 @@ namespace ThirtyFour.UI.Tests.Tests
         public void DriverPropertyIsSameInstance()
         {
             IWebElement el = driver.FindElement(By.TagName("h1"));
-            WrappedElement wEl = new WrappedElement(el);
-            Assert.AreSame(this.driver, wEl.Driver);
+            WrappedElement wrappedEl = new WrappedElement(el);
+            Assert.AreSame(this.driver, wrappedEl.Driver);
         }
 
         [TestMethod]
         public void ParentElementPropertyIsCorrectElement()
         {
-            IWebElement h1El = driver.FindElement(By.TagName("h1"));
-            WrappedElement wH1El = new WrappedElement(h1El);
-            Assert.AreEqual("testBody", wH1El.ParentElement.GetAttribute("id"));
+            IWebElement el = driver.FindElement(By.TagName("h1"));
+            WrappedElement wrappedEl = new WrappedElement(el);
+            Assert.AreEqual("test-body", wrappedEl.ParentElement.GetAttribute("id"));
 
-            IWebElement pLastEl = driver.FindElement(By.ClassName("last"));
-            WrappedElement wpLastEl = new WrappedElement(pLastEl);
-            Assert.AreEqual("footer-id", wpLastEl.ParentElement.GetAttribute("id"));
+            IWebElement el2 = driver.FindElement(By.ClassName("last"));
+            WrappedElement wrappedEl2 = new WrappedElement(el2);
+            Assert.AreEqual("footer-id", wrappedEl2.ParentElement.GetAttribute("id"));
         }
 
         [TestMethod]
         public void GetAncestorElementReturnsCorrectElementFilteredByParentTagName()
         {
             IWebElement el = driver.FindElement(By.ClassName("last"));
-            WrappedElement wEl = new WrappedElement(el);
-            Assert.AreEqual("footer-id", wEl.GetAncestorElement("footer").GetAttribute("id"));
+            WrappedElement wrappedEl = new WrappedElement(el);
+            Assert.AreEqual("footer-id", wrappedEl.GetAncestorElement("footer").GetAttribute("id"));
+           
         }
 
         [TestMethod]
         public void GetAncestorElementReturnsCorrectElementFilteredByAncestorTagName()
         {
             IWebElement el = driver.FindElement(By.ClassName("last"));
-            WrappedElement wEl = new WrappedElement(el);
-            Assert.AreEqual("testBody", wEl.GetAncestorElement("body").GetAttribute("id"));
+            WrappedElement wrappedEl = new WrappedElement(el);
+            Assert.AreEqual("test-body", wrappedEl.GetAncestorElement("body").GetAttribute("id"));
         }
 
         [TestMethod]
         public void GetAncestorElementReturnsNullWhenFilteredByInvalidTagName()
         {
             IWebElement el = driver.FindElement(By.ClassName("last"));
-            WrappedElement wEl = new WrappedElement(el);
-            Assert.IsNull(wEl.GetAncestorElement("head"));
+            WrappedElement wrappedEl = new WrappedElement(el);
+            Assert.IsNull(wrappedEl.GetAncestorElement("head"));
         }
     }
 }
