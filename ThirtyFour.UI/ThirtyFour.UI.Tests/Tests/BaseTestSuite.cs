@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,7 +19,12 @@ namespace ThirtyFour.UI.Tests.Tests
         static IWebDriver DRIVER_INSTANCE;
         protected IWebDriver driver;
 
-        protected abstract string Url { get; }
+        protected string Url {
+            get
+            {
+                return Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase), "Resources", "index.html");
+            }
+        }
 
         [AssemblyInitialize]
         public static void AssemblyInitialize(TestContext testContext)
