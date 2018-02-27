@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ThirtyFour.UI.Form
 {
@@ -29,15 +27,15 @@ namespace ThirtyFour.UI.Form
                 IWebElement parentLabel = null;
 
                 //attempt to find label using for=id
-                string id = this.Element.GetAttribute("id");
+                string id = Element.GetAttribute("id");
                 if (id != null)
                 {
-                    labels = this.Driver.FindElements(By.CssSelector(String.Format("label[for='{0}']", id)));
+                    labels = Driver.FindElements(By.CssSelector(String.Format("label[for='{0}']", id)));
                 }
 
                 if (labels == null || labels.Count == 0) //attempt to find wrapped label element
                 {
-                    parentLabel = this.GetAncestorElement("label");
+                    parentLabel = GetAncestorElement("label");
                 }
                 else
                 {
