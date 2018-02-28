@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Tests\BaseTestSuite.cs" />
     <Compile Include="Tests\FormElementTests.cs" />
+    <Compile Include="Tests\RadioButtonTests.cs" />
     <Compile Include="Tests\WrappedElementTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
