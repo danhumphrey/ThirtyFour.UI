@@ -17,6 +17,17 @@ namespace ThirtyFour.UI.Form
         public FormElement(IWebElement element) : base(element) { }
 
         /// <summary>
+        /// The value of the element
+        /// </summary>
+        public string Value
+        {
+            get
+            {
+                return this.Element.GetAttribute("value");
+            }
+        }
+
+        /// <summary>
         /// The label text of the element or an empty string if no associated label
         /// </summary>
         public string LabelText

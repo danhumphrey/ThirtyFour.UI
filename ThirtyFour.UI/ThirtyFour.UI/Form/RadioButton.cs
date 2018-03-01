@@ -25,17 +25,6 @@ namespace ThirtyFour.UI.Form
         }
 
         /// <summary>
-        /// The value of the element
-        /// </summary>
-        public string Value
-        {
-            get
-            {
-                return this.Element.GetAttribute("value");
-            }
-        }
-
-        /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="element">The wrapped element</param>
