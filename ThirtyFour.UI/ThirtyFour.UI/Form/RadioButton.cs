@@ -30,14 +30,7 @@ namespace ThirtyFour.UI.Form
         /// <param name="element">The wrapped element</param>
         public RadioButton(IWebElement element) : base(element) { }
 
-        /// <summary>
-        /// Clicks the element irrespective of its current state
-        /// </summary>
-        public void Click()
-        {
-            this.Element.Click();
-        }
-
+      
         /// <summary>
         /// Checks the radio button
         /// </summary>
@@ -45,7 +38,7 @@ namespace ThirtyFour.UI.Form
         {
             if (!this.IsChecked)
             {
-                this.Click();
+                this.Element.Click();
             }
         }
 
