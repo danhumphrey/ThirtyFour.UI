@@ -56,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Tests\BaseTestSuite.cs" />
+    <Compile Include="Tests\BooleanElementTests.cs" />
+    <Compile Include="Tests\CheckboxTests.cs" />
     <Compile Include="Tests\FormElementTests.cs" />
     <Compile Include="Tests\RadioButtonTests.cs" />
     <Compile Include="Tests\WrappedElementTests.cs" />

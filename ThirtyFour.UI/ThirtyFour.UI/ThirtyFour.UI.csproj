@@ -47,6 +47,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\BooleanElement.cs" />
+    <Compile Include="Form\Checkbox.cs" />
     <Compile Include="Form\FormElement.cs" />
     <Compile Include="Form\RadioButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

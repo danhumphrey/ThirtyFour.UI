@@ -11,19 +11,9 @@ namespace ThirtyFour.UI.Form
     /// <summary>
     /// Represents a radio element
     /// </summary>
-    public class RadioButton : FormElement
+    public class RadioButton : BooleanElement
     {
-        /// <summary>
-        /// The checked state of the element
-        /// </summary>
-        public bool IsChecked
-        {
-            get
-            {
-                return this.Element.Selected;
-            }
-        }
-
+        
         /// <summary>
         /// Constructor
         /// </summary>
