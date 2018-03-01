@@ -7,24 +7,8 @@ using ThirtyFour.UI.Form;
 namespace ThirtyFour.UI.Tests.Tests
 {
     [TestClass]
-    public class RadioTests : BaseTestSuite
+    public class RadioButtonTests : BaseTestSuite
     {
-   
-        [TestMethod]
-        public void IsCheckedPropertyWhenNotChecked()
-        {
-            IWebElement el = driver.FindElement(By.Id("rorange"));
-            RadioButton radio = new RadioButton(el);
-            Assert.IsFalse(radio.IsChecked);
-        }
-
-        [TestMethod]
-        public void IsCheckedPropertyWhenChecked()
-        {
-            IWebElement el = driver.FindElement(By.Id("rviolet"));
-            RadioButton radio = new RadioButton(el);
-            Assert.IsTrue(radio.IsChecked);
-        }
 
         [TestMethod]
         public void SetCheckedChangesState()
