@@ -23,7 +23,7 @@ namespace ThirtyFour.UI.Form
         {
             get
             {
-                return this.Element.GetAttribute("value");
+                return Element.GetAttribute("value");
             }
         }
 

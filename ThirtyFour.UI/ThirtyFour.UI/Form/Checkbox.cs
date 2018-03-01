@@ -16,9 +16,9 @@ namespace ThirtyFour.UI.Form
         /// <param name="onOrOff">the boolean state of the element</param>
         public void SetChecked(bool onOrOff)
         {
-            if ((onOrOff && !this.IsChecked) || (!onOrOff && this.IsChecked))
+            if ((onOrOff && !IsChecked) || (!onOrOff && IsChecked))
             {
-                this.Element.Click();
+                Element.Click();
             }
         }
 
