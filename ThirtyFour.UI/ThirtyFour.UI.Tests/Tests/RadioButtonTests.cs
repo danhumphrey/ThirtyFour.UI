@@ -9,15 +9,7 @@ namespace ThirtyFour.UI.Tests.Tests
     [TestClass]
     public class RadioTests : BaseTestSuite
     {
-       
-        [TestMethod]
-        public void ValuePropertyReturnsCorrectValue()
-        {
-            IWebElement el = driver.FindElement(By.Id("rorange"));
-            RadioButton radio = new RadioButton(el);
-            Assert.AreEqual("orange", radio.Value);
-        }
-
+   
         [TestMethod]
         public void IsCheckedPropertyWhenNotChecked()
         {
