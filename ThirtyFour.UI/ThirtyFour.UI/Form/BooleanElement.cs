@@ -1,9 +1,4 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ThirtyFour.UI.Form
 {
@@ -16,7 +11,7 @@ namespace ThirtyFour.UI.Form
         {
             get
             {
-                return this.Element.Selected;
+                return Element.Selected;
             }
         }
 
