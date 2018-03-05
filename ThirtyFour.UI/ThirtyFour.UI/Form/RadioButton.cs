@@ -35,8 +35,8 @@ namespace ThirtyFour.UI.Form
         /// <returns>A ReadOnlyCollection of all buttons in the group</returns>
         public IReadOnlyCollection<RadioButton> GetGroupButtons()
         {
-            IList<RadioButton> buttons = new List<RadioButton>();
-            string buttonName = Element.GetAttribute("name");
+            var buttons = new List<RadioButton>();
+            var buttonName = Element.GetAttribute("name");
             if (buttonName == null)
             {
                 buttons.Add(this);
@@ -44,7 +44,7 @@ namespace ThirtyFour.UI.Form
             }
             else
             {
-                IReadOnlyCollection<IWebElement> buttonElements = Driver.FindElements(By.CssSelector(String.Format("input[type='radio'][name='{0}']", buttonName)));
+                var buttonElements = Driver.FindElements(By.CssSelector(String.Format("input[type='radio'][name='{0}']", buttonName)));
                 foreach (IWebElement el in buttonElements)
                 {
                     buttons.Add(new RadioButton(el));
@@ -59,7 +59,7 @@ namespace ThirtyFour.UI.Form
         /// <returns>the selected radio button</returns>
         public RadioButton GetSelectedGroupButton()
         {
-            IReadOnlyCollection<RadioButton> buttons = GetGroupButtons();
+            var buttons = GetGroupButtons();
             foreach (RadioButton button in buttons)
             {
                 if (button.IsChecked)
@@ -76,7 +76,7 @@ namespace ThirtyFour.UI.Form
         /// <returns>The value of the selected radio button or an empty string</returns>
         public string GetGroupValue()
         {
-            RadioButton button = GetSelectedGroupButton();
+            var button = GetSelectedGroupButton();
             if (button == null)
             {
                 return "";
@@ -90,7 +90,7 @@ namespace ThirtyFour.UI.Form
         /// <param name="value">the value fo the radio button</param>
         public void SetCheckedByValue(string value)
         {
-            IReadOnlyCollection<RadioButton> buttons = GetGroupButtons();
+            var buttons = GetGroupButtons();
             foreach (RadioButton button in buttons)
             {
                 if (button.Value.Equals(value))
@@ -108,7 +108,7 @@ namespace ThirtyFour.UI.Form
         /// <param name="label">the value fo the radio button</param>
         public void SetCheckedByLabel(string label)
         {
-            IReadOnlyCollection<RadioButton> buttons = GetGroupButtons();
+            var buttons = GetGroupButtons();
             foreach (RadioButton button in buttons)
             {
                 if (button.LabelText.Equals(label))

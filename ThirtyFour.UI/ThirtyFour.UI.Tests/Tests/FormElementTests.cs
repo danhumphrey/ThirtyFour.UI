@@ -17,18 +17,18 @@ namespace ThirtyFour.UI.Tests.Tests
         [TestMethod]
         public void ValuePropertyReturnsCorrectValue()
         {
-            IWebElement el = driver.FindElement(By.Id("rorange"));
+            var el = driver.FindElement(By.Id("rorange"));
             FormElement radio = new FormElementImpl(el);
             Assert.AreEqual("orange", radio.Value);
 
-            IWebElement inputTextEl = driver.FindElement(By.Name("input-text"));
+            var inputTextEl = driver.FindElement(By.Name("input-text"));
             FormElement inputText = new FormElementImpl(inputTextEl);
             Assert.AreEqual("initial input-text value", inputText.Value);
             inputTextEl.Clear();
             inputTextEl.SendKeys("new input-text value");
             Assert.AreEqual("new input-text value", inputText.Value);
 
-            IWebElement inputHiddenEl = driver.FindElement(By.Name("input-hidden"));
+            var inputHiddenEl = driver.FindElement(By.Name("input-hidden"));
             FormElement inputHidden = new FormElementImpl(inputHiddenEl);
             Assert.AreEqual("initial input-hidden value", inputHidden.Value);
             
@@ -37,7 +37,7 @@ namespace ThirtyFour.UI.Tests.Tests
         [TestMethod]
         public void LabelTextWhenWrapped()
         {
-            IWebElement el = driver.FindElement(By.Id("rorange"));
+            var el = driver.FindElement(By.Id("rorange"));
             FormElement radio = new FormElementImpl(el);
             Assert.AreEqual("Orange", radio.LabelText);
         }
@@ -45,7 +45,7 @@ namespace ThirtyFour.UI.Tests.Tests
         [TestMethod]
         public void LabelTextWithForAttribute()
         {
-            IWebElement el = driver.FindElement(By.Id("rviolet"));
+            var el = driver.FindElement(By.Id("rviolet"));
             FormElement radio = new FormElementImpl(el);
             Assert.AreEqual("Violet", radio.LabelText);
         }

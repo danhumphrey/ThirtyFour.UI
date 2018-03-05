@@ -26,8 +26,8 @@ namespace ThirtyFour.UI.Tests.Tests
         public static void AssemblyInitialize(TestContext testContext)
         {
 
-            ChromeDriverService chromeService = ChromeDriverService.CreateDefaultService();
-            ChromeOptions chromeOptions = new ChromeOptions();
+            var chromeService = ChromeDriverService.CreateDefaultService();
+            var chromeOptions = new ChromeOptions();
             DRIVER_INSTANCE = new ChromeDriver(chromeService, chromeOptions);
             DRIVER_INSTANCE.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }
@@ -55,8 +55,8 @@ namespace ThirtyFour.UI.Tests.Tests
                     Directory.CreateDirectory(TestContext.TestResultsDirectory);
                 }
 
-                Screenshot screenShot = ((ITakesScreenshot)driver).GetScreenshot();
-                string fileName = TestContext.TestResultsDirectory + "\\Screenshot_" + TestContext.TestName + DateTime.Now.ToString("yyyy-dd-MM-HH-mm-ss") + ".png";
+                var screenShot = ((ITakesScreenshot)driver).GetScreenshot();
+                var fileName = TestContext.TestResultsDirectory + "\\Screenshot_" + TestContext.TestName + DateTime.Now.ToString("yyyy-dd-MM-HH-mm-ss") + ".png";
                 screenShot.SaveAsFile((fileName), ScreenshotImageFormat.Png);
                 TestContext.AddResultFile(fileName);
             }

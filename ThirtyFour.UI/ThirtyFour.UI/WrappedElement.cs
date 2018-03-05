@@ -83,7 +83,7 @@ namespace ThirtyFour.UI
         public IWebElement GetAncestorElement(string tagName)
         {
             IWebElement parent = null;
-            IReadOnlyCollection<IWebElement> els = Element.FindElements(By.XPath("ancestor::" + tagName));
+            var els = Element.FindElements(By.XPath("ancestor::" + tagName));
             if (els.Count > 0)
             {
                 parent = els.ElementAt(0);
