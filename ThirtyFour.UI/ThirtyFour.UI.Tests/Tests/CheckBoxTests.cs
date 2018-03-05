@@ -11,7 +11,7 @@ namespace ThirtyFour.UI.Tests.Tests
         [TestMethod]
         public void SetCheckedTrueUpdatesCheckedState()
         {
-            Checkbox cbRed = new Checkbox(driver.FindElement(By.Id("cbred")));
+            var cbRed = new Checkbox(driver.FindElement(By.Id("cbred")));
             Assert.IsFalse(cbRed.IsChecked);
             cbRed.SetChecked(true);
             Assert.IsTrue(cbRed.IsChecked);
@@ -20,7 +20,7 @@ namespace ThirtyFour.UI.Tests.Tests
         [TestMethod]
         public void SetCheckedFalseUpdatesCheckedState()
         {
-            Checkbox cbGreen = new Checkbox(driver.FindElement(By.Id("cbgreen")));
+            var cbGreen = new Checkbox(driver.FindElement(By.Id("cbgreen")));
             Assert.IsTrue(cbGreen.IsChecked);
             cbGreen.SetChecked(false);
             Assert.IsFalse(cbGreen.IsChecked);

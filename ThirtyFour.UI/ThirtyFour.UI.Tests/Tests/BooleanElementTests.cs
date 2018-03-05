@@ -22,7 +22,7 @@ namespace ThirtyFour.UI.Tests.Tests
         [TestMethod]
         public void IsCheckedPropertyWhenNotChecked()
         {
-            IWebElement el = driver.FindElement(By.Id("rorange"));
+            var el = driver.FindElement(By.Id("rorange"));
             BooleanElement radio = new BooleanElementImpl(el);
             Assert.IsFalse(radio.IsChecked);
         }
@@ -30,7 +30,7 @@ namespace ThirtyFour.UI.Tests.Tests
         [TestMethod]
         public void IsCheckedPropertyWhenChecked()
         {
-            IWebElement el = driver.FindElement(By.Id("rviolet"));
+            var el = driver.FindElement(By.Id("rviolet"));
             BooleanElement radio = new BooleanElementImpl(el);
             Assert.IsTrue(radio.IsChecked);
         }

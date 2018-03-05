@@ -13,8 +13,8 @@ namespace ThirtyFour.UI.Tests.Tests
         [TestMethod]
         public void SetCheckedChangesState()
         {
-            IWebElement el = driver.FindElement(By.Id("rorange"));
-            RadioButton radio = new RadioButton(el);
+            var el = driver.FindElement(By.Id("rorange"));
+            var radio = new RadioButton(el);
             radio.SetChecked();
             Assert.IsTrue(radio.IsChecked);
         }
@@ -22,25 +22,25 @@ namespace ThirtyFour.UI.Tests.Tests
         [TestMethod]
         public void GetGroupButtons()
         {
-            IWebElement el = driver.FindElement(By.Id("rorange"));
-            RadioButton radio = new RadioButton(el);
-            IReadOnlyCollection<RadioButton> buttons = radio.GetGroupButtons();
+            var el = driver.FindElement(By.Id("rorange"));
+            var radio = new RadioButton(el);
+            var buttons = radio.GetGroupButtons();
         }
 
         [TestMethod]
         public void GetSelectedGroupButton()
         {
-            IWebElement el = driver.FindElement(By.Id("rorange"));
-            RadioButton radio = new RadioButton(el);
-            RadioButton selectedRadioButton = radio.GetSelectedGroupButton();
+            var el = driver.FindElement(By.Id("rorange"));
+            var radio = new RadioButton(el);
+            var selectedRadioButton = radio.GetSelectedGroupButton();
             Assert.AreEqual("violet", selectedRadioButton.Value);
         }
 
         [TestMethod]
         public void GetGroupValue()
         {
-            RadioButton radioOrange = new RadioButton(driver.FindElement(By.Id("rorange")));
-            RadioButton radioViolet = new RadioButton(driver.FindElement(By.Id("rviolet")));
+            var radioOrange = new RadioButton(driver.FindElement(By.Id("rorange")));
+            var radioViolet = new RadioButton(driver.FindElement(By.Id("rviolet")));
             Assert.AreEqual("violet", radioOrange.GetGroupValue());
             radioOrange.SetChecked();
             Assert.AreEqual("orange", radioViolet.GetGroupValue());
@@ -49,7 +49,7 @@ namespace ThirtyFour.UI.Tests.Tests
         [TestMethod]
         public void SetCheckedByValueThrowsExceptionForInvalidValue()
         {
-            RadioButton radioOrange = new RadioButton(driver.FindElement(By.Id("rorange")));
+            var radioOrange = new RadioButton(driver.FindElement(By.Id("rorange")));
 
             string value = "sbhjsgbjs";
 
@@ -59,7 +59,7 @@ namespace ThirtyFour.UI.Tests.Tests
             }
             catch (NoSuchElementException ex)
             {
-                string exMessage = "Unable to find radio button with value " + value;
+                var exMessage = "Unable to find radio button with value " + value;
                 Assert.AreEqual(exMessage, ex.Message);
                 return;
             }
@@ -70,8 +70,8 @@ namespace ThirtyFour.UI.Tests.Tests
         [TestMethod]
         public void SetCheckedByValue()
         {
-            RadioButton radioOrange = new RadioButton(driver.FindElement(By.Id("rorange")));
-            RadioButton radioViolet = new RadioButton(driver.FindElement(By.Id("rviolet")));
+            var radioOrange = new RadioButton(driver.FindElement(By.Id("rorange")));
+            var radioViolet = new RadioButton(driver.FindElement(By.Id("rviolet")));
 
             Assert.IsFalse(radioOrange.IsChecked);
             radioViolet.SetCheckedByValue("orange");
@@ -81,7 +81,7 @@ namespace ThirtyFour.UI.Tests.Tests
         [TestMethod]
         public void SetCheckedByLabelThrowsExceptionForInvalidLabel()
         {
-            RadioButton radioOrange = new RadioButton(driver.FindElement(By.Id("rorange")));
+            var radioOrange = new RadioButton(driver.FindElement(By.Id("rorange")));
 
             string label = "sbhjsgbjs";
 
@@ -91,7 +91,7 @@ namespace ThirtyFour.UI.Tests.Tests
             }
             catch (NoSuchElementException ex)
             {
-                string exMessage = "Unable to find radio button with label " + label;
+                var exMessage = "Unable to find radio button with label " + label;
                 Assert.AreEqual(exMessage, ex.Message);
                 return;
             }
@@ -102,8 +102,8 @@ namespace ThirtyFour.UI.Tests.Tests
         [TestMethod]
         public void SetCheckedByLabel()
         {
-            RadioButton radioOrange = new RadioButton(driver.FindElement(By.Id("rorange")));
-            RadioButton radioViolet = new RadioButton(driver.FindElement(By.Id("rviolet")));
+            var radioOrange = new RadioButton(driver.FindElement(By.Id("rorange")));
+            var radioViolet = new RadioButton(driver.FindElement(By.Id("rviolet")));
 
             Assert.IsFalse(radioOrange.IsChecked);
             radioViolet.SetCheckedByLabel("Orange");
