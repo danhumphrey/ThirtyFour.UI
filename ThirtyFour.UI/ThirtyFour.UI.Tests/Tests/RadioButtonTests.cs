@@ -1,7 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
 using ThirtyFour.UI.Form;
 
 namespace ThirtyFour.UI.Tests.Tests
