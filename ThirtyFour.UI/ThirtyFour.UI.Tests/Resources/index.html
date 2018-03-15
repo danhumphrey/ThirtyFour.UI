@@ -5,6 +5,20 @@
         .first {
             font-size: 110%;
         }
+
+        .subtotal, .total {
+            text-align: right;
+        }
+
+        .total {
+            font-weight: bold;
+            font-size: 120%;
+        }
+
+        .quantity {
+            text-align: center;
+        }
+
     </style>
 </head>
 <body id="test-body">
@@ -41,5 +55,43 @@
     <footer id="footer-id">
         <p class="last">Last Paragraph</p>
     </footer>
+
+    <h2>table</h2>
+    <table class="cart">
+        <thead>
+            <tr>
+                <th>Actions</th>
+                <th class="quantity">Quantity</th>
+                <th>Product</th>
+                <th class="subtotal">Subtotal</th>
+            <tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="first-action-cell"><button id="first-button">X</button></td>
+                <td class="quantity">1</td>
+                <td class="first-product">First Test Product</td>
+                <td class="subtotal">$9.99</td>
+            </tr>
+            <tr>
+                <td><button>X</button></td>
+                <td class="quantity">3</td>
+                <td>Another Product</td>
+                <td class="subtotal">$33.00</td>
+            </tr>
+            <tr>
+                <td><button>X</button></td>
+                <td class="quantity">1</td>
+                <td>Expensive Product</td>
+                <td class="subtotal">$250.00</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="total" colspan="4">$292.99</td>
+            </tr>
+        </tfoot>
+    </table>
+
 </body>
 </html>
