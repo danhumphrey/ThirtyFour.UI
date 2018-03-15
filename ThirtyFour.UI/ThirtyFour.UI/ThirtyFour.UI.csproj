@@ -52,6 +52,7 @@
     <Compile Include="Form\FormElement.cs" />
     <Compile Include="Form\RadioButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Table\ChildElementCellParser.cs" />
     <Compile Include="Table\ColumnHeaderCellFinder.cs" />
     <Compile Include="Table\ICellFinder.cs" />
     <Compile Include="Table\ICellParser.cs" />
