@@ -18,7 +18,7 @@ namespace ThirtyFour.UI.Tests.Tests
             {
                 window = new PopupWindow(driver);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Assert.AreEqual(driver, window.Driver);
             }
