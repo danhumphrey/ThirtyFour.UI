@@ -2,9 +2,9 @@
 using OpenQA.Selenium;
 using System;
 
-namespace ThirtyFour.UI.Tests.Tests
+namespace ThirtyFour.UI.Tests.Tests.Table
 {
-    using Table = Table.Table;
+    using Table = ThirtyFour.UI.Table.Table;
 
     [TestClass]
     public class TableTests : BaseTestSuite
