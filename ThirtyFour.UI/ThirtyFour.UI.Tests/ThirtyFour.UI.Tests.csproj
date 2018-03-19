@@ -65,6 +65,7 @@
     <Compile Include="Tests\RadioButtonTests.cs" />
     <Compile Include="Tests\StringCellParserTests.cs" />
     <Compile Include="Tests\PopupWindowTests.cs" />
+    <Compile Include="Tests\TableTests.cs" />
     <Compile Include="Tests\WrappedElementTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
