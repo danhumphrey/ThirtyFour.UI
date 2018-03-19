@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using System;
 using ThirtyFour.UI.Window;
 
-namespace ThirtyFour.UI.Tests.Tests
+namespace ThirtyFour.UI.Tests.Tests.Window
 {
     [TestClass]
     public class PopupWindowTests : BaseTestSuite
