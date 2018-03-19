@@ -60,9 +60,11 @@
     <Compile Include="Tests\CheckboxTests.cs" />
     <Compile Include="Tests\ChildElementCellParserTests.cs" />
     <Compile Include="Tests\ColumnHeaderCellFinderTests.cs" />
+    <Compile Include="Tests\DefaultWindowSwitcherTests.cs" />
     <Compile Include="Tests\FormElementTests.cs" />
     <Compile Include="Tests\RadioButtonTests.cs" />
     <Compile Include="Tests\StringCellParserTests.cs" />
+    <Compile Include="Tests\PopupWindowTests.cs" />
     <Compile Include="Tests\WrappedElementTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
