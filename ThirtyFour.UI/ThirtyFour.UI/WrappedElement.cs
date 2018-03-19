@@ -1,6 +1,5 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Internal;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace ThirtyFour.UI
@@ -69,6 +68,7 @@ namespace ThirtyFour.UI
         public WrappedElement(IWebElement element)
         {
             Element = element;
+            // I know I probably shouldn't do this as it's internal
             Driver = ((IWrapsDriver)element).WrappedDriver;
 
         }
