@@ -2,7 +2,7 @@
 using OpenQA.Selenium;
 using ThirtyFour.UI.Table;
 
-namespace ThirtyFour.UI.Tests.Tests.Table
+namespace ThirtyFour.UI.Tests.Table
 {
     [TestClass]
     public class StringCellParserTests : BaseTestSuite

@@ -52,19 +52,31 @@
     <Compile Include="Form\FormElement.cs" />
     <Compile Include="Form\RadioButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
     <Compile Include="Table\ChildElementCellParser.cs" />
     <Compile Include="Table\ColumnHeaderCellFinder.cs" />
     <Compile Include="Table\ICellFinder.cs" />
     <Compile Include="Table\ICellParser.cs" />
     <Compile Include="Table\StringCellParser.cs" />
-    <Compile Include="Table\Table.cs" />
-    <Compile Include="Window\DefaultWindowSwitcher.cs" />
-    <Compile Include="Window\IWindowSwitcher.cs" />
+    <Compile Include="Table\TableElement.cs" />
+    <Compile Include="Window\DefaultMatcher.cs" />
+    <Compile Include="Window\IMatcher.cs" />
     <Compile Include="Window\PopupWindow.cs" />
+    <Compile Include="Window\TitleMatcher.cs" />
     <Compile Include="WrappedElement.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

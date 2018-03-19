@@ -2,7 +2,7 @@
 using OpenQA.Selenium;
 using ThirtyFour.UI.Form;
 
-namespace ThirtyFour.UI.Tests.Tests.Form
+namespace ThirtyFour.UI.Tests.Form
 {
     [TestClass]
     public class RadioButtonTests : BaseTestSuite

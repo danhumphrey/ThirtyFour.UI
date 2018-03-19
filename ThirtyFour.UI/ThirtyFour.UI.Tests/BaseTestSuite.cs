@@ -5,7 +5,7 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace ThirtyFour.UI.Tests.Tests
+namespace ThirtyFour.UI.Tests
 {
     [TestClass]
     public abstract class BaseTestSuite

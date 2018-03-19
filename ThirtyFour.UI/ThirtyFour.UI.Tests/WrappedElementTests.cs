@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 
-namespace ThirtyFour.UI.Tests.Tests
+namespace ThirtyFour.UI.Tests
 {
     [TestClass]
     public class WrappedElementTests : BaseTestSuite
