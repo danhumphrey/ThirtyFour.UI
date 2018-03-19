@@ -27,7 +27,7 @@ namespace ThirtyFour.UI.Window
         }
 
         /// <summary>
-        /// The driver instance
+        /// The default window handle
         /// </summary>
         public string DefaultHandle
         {
@@ -46,7 +46,7 @@ namespace ThirtyFour.UI.Window
         /// Constructor
         /// </summary>
         /// <param name="driver">The IWebDriver instance</param>
-        public PopupWindow(IWebDriver driver):this(driver, new DefaultWindowSwitcher())
+        public PopupWindow(IWebDriver driver):this(driver, new DefaultMatcher())
         {
         }
 
@@ -54,12 +54,13 @@ namespace ThirtyFour.UI.Window
         /// Constructor
         /// </summary>
         /// <param name="driver">The IWebDriver instance</param>
-        /// <param name="finder">An instance of IWindowSwitcher</param>
-        public PopupWindow(IWebDriver driver, IWindowSwitcher finder)
+        /// <param name="matcher">An instance of IMatcher</param>
+        public PopupWindow(IWebDriver driver, IMatcher matcher)
         {
             this.DefaultHandle = driver.CurrentWindowHandle;
             this.Driver = driver;
-            finder.SwitchWindow(driver);
+            matcher.MatchWindow(driver);
+            this.DefaultHandle = driver.CurrentWindowHandle;
         }
 
     }

@@ -6,14 +6,14 @@ namespace ThirtyFour.UI.Table
     /// <summary>
     /// The Table class provides helper methods for interacting with a HTML table
     /// </summary>
-    public class Table : WrappedElement
+    public class TableElement : WrappedElement
     {
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="element">The root element of the table</param>
-        public Table(IWebElement element) : base(element)
+        public TableElement(IWebElement element) : base(element)
         {
         }
 

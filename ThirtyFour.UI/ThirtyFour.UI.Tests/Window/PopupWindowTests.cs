@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using System;
 using ThirtyFour.UI.Window;
 
-namespace ThirtyFour.UI.Tests.Tests.Window
+namespace ThirtyFour.UI.Tests.Window
 {
     [TestClass]
     public class PopupWindowTests : BaseTestSuite
@@ -25,7 +25,7 @@ namespace ThirtyFour.UI.Tests.Tests.Window
         }
 
         [TestMethod]
-        public void DefaultHandleEqualsDriverHandleWhenNoPopupExists()
+        public void HandleEqualsDriverHandleWhenNoPopupExists()
         {
             PopupWindow window = null;
             string currentHandle = driver.CurrentWindowHandle;
@@ -43,24 +43,22 @@ namespace ThirtyFour.UI.Tests.Tests.Window
         }
 
         [TestMethod]
-        public void DefaultHandleEqualsDriverHandleWhenPopupDoesExist()
+        public void HandleEqualsDriverHandleWhenPopupDoesExist()
         {
             PopupWindow window = null;
-
-            string currentHandle = driver.CurrentWindowHandle;
-
+           
             try
             {
                 window = new PopupWindow(driver);
             }
             catch (Exception)
             {
-                Assert.AreEqual(currentHandle, window.DefaultHandle);
+                Assert.AreEqual(driver.CurrentWindowHandle, window.DefaultHandle);
             }
         }
 
         [TestMethod]
-        public void PopupWindowSwitcherSwitchesToCorrectWindowWhenNoSwitcherIsProvided()
+        public void PopupWindowSwitchesToCorrectWindowWhenNoFinderIsProvided()
         {
             driver.FindElement(By.LinkText("Popup")).Click();
             new PopupWindow(driver);

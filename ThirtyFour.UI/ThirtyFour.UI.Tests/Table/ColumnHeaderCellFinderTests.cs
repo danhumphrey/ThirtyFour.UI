@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using ThirtyFour.UI.Table;
 using System;
 
-namespace ThirtyFour.UI.Tests.Tests.Table
+namespace ThirtyFour.UI.Tests.Table
 {
     [TestClass]
     public class ColumnHeaderCellFinderTests : BaseTestSuite

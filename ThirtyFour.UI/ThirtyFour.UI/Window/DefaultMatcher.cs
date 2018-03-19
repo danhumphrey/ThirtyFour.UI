@@ -3,9 +3,9 @@ using OpenQA.Selenium;
 
 namespace ThirtyFour.UI.Window
 {
-    public class DefaultWindowSwitcher : IWindowSwitcher
+    public class DefaultMatcher : IMatcher
     {
-        public void SwitchWindow(IWebDriver driver)
+        public void MatchWindow(IWebDriver driver)
         {
             foreach (string handle in driver.WindowHandles)
             {
