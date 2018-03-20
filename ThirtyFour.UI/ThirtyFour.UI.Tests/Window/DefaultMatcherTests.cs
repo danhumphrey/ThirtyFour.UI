@@ -6,29 +6,27 @@ using ThirtyFour.UI.Window;
 namespace ThirtyFour.UI.Tests.Window
 {
     [TestClass]
-    public class TitleWindowSwitcherTests : BaseTestSuite
+    public class DefaultMatcherTests : BaseTestSuite
     {
-        public TitleMatcher TitleWindowSwitcher { get; private set; }
-
         [TestMethod]
-        public void ExceptionThrownWhenNoMatchingTitle()
+        public void ExceptionThrownWhenNoPopupWindowsExist()
         {
             try
             {
-                new TitleMatcher("shjksjd").MatchWindow(driver);
+                new DefaultMatcher().MatchWindow(driver);
                 Assert.Fail("An exception should have been thrown");
             }
             catch (Exception e)
             {
-                Assert.AreEqual("Unable to find Window", e.Message);
+                Assert.AreEqual("Unable to find a new Window", e.Message);
             }
         }
 
         [TestMethod]
-        public void WindowSwitchedWhenMatchingTitle()
+        public void DefaultWindowSwitcherSwitchesToCorrectWindow()
         {
             driver.FindElement(By.LinkText("Popup")).Click();
-            new TitleMatcher(@"GitHub - danhumphrey/ThirtyFour.UI: A Selenium WebDriver (element 34) UI Library for .NET").MatchWindow(driver);
+            new DefaultMatcher().MatchWindow(driver);
             Assert.AreEqual("https://github.com/danhumphrey/ThirtyFour.UI", driver.Url);
         }
     }

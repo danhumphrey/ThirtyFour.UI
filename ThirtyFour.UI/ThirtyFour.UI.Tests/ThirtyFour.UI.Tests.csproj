@@ -61,7 +61,7 @@
     <Compile Include="Table\ChildElementCellParserTests.cs" />
     <Compile Include="Table\ColumnHeaderCellFinderTests.cs" />
     <Compile Include="UtilsTests.cs" />
-    <Compile Include="Window\DefaultWindowSwitcherTests.cs" />
+    <Compile Include="Window\DefaultMatcherTests.cs" />
     <Compile Include="Form\FormElementTests.cs" />
     <Compile Include="Form\RadioButtonTests.cs" />
     <Compile Include="Table\StringCellParserTests.cs" />
@@ -69,7 +69,7 @@
     <Compile Include="Table\TableTests.cs" />
     <Compile Include="WrappedElementTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Window\TitleWindowSwitcherTests.cs" />
+    <Compile Include="Window\TitleMatcherTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

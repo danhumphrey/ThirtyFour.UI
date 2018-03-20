@@ -14,7 +14,7 @@ namespace ThirtyFour.UI.Tests
         [TestMethod]
         public void TestTimeoutReturnsFalse()
         {
-            bool result = Utils.RetryUntilTimeout(TimeSpan.FromSeconds(1), () =>
+            bool result = Utils.RetryUntilTimeout(TimeSpan.FromSeconds(1), TimeSpan.FromMilliseconds(500), () =>
             {
                 Thread.Sleep(1000);
                 return false;
@@ -26,7 +26,7 @@ namespace ThirtyFour.UI.Tests
         [TestMethod]
         public void TestSuccessReturnsTrue()
         {
-            bool result = Utils.RetryUntilTimeout(TimeSpan.FromSeconds(1), () =>
+            bool result = Utils.RetryUntilTimeout(TimeSpan.FromSeconds(1), TimeSpan.FromMilliseconds(500), () =>
             {
                 return true;
             });
