@@ -8,7 +8,6 @@ namespace ThirtyFour.UI.Tests.Window
     [TestClass]
     public class TitleMatcherTests : BaseTestSuite
     {
-        public TitleMatcher TitleWindowSwitcher { get; private set; }
 
         [TestMethod]
         public void ExceptionThrownWhenNoMatchingTitle()
