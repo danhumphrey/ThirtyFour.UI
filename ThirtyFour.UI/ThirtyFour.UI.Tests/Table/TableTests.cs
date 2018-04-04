@@ -4,7 +4,7 @@ using System;
 
 namespace ThirtyFour.UI.Tests.Table
 {
-    using TableElement = ThirtyFour.UI.Table.TableElement;
+    using TableElement = UI.Table.TableElement;
 
     [TestClass]
     public class TableTests : BaseTestSuite
