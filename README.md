@@ -1,2 +1,2 @@
 # ThirtyFour.UI
-A Selenium WebDriver (element 34) UI Library for .NET
+A Selenium (element 34) WebDriver UI Library
