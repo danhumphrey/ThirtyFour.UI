@@ -17,7 +17,7 @@ namespace ThirtyFour.UI.Window
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="title">The title of the window to match</param>
+        /// <param name="url">The url of the window to match</param>
         public UrlMatcher(string url)
         {
             this.url = url;
