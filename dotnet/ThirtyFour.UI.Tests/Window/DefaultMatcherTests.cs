@@ -8,12 +8,13 @@ namespace ThirtyFour.UI.Tests.Window
     [TestClass]
     public class DefaultMatcherTests : BaseTestSuite
     {
+
         [TestMethod]
         public void ExceptionThrownWhenNoPopupWindowsExist()
         {
             try
             {
-                new DefaultMatcher().MatchWindow(driver);
+                new DefaultMatcher().MatchWindow(driver, 10);
                 Assert.Fail("An exception should have been thrown");
             }
             catch (Exception e)
@@ -23,10 +24,19 @@ namespace ThirtyFour.UI.Tests.Window
         }
 
         [TestMethod]
-        public void DefaultWindowSwitcherSwitchesToCorrectWindow()
+        public void tWindowSwitchedToCorrectWindow()
         {
+      
             driver.FindElement(By.LinkText("Popup")).Click();
-            new DefaultMatcher().MatchWindow(driver);
+            new DefaultMatcher().MatchWindow(driver, 10);
+            Assert.AreEqual("https://github.com/danhumphrey/ThirtyFour.UI", driver.Url);
+        }
+
+        [TestMethod]
+        public void WindowSwitchedWhenMatchingDelayedWindow()
+        {
+            driver.FindElement(By.LinkText("Delayed Popup")).Click();
+            new DefaultMatcher().MatchWindow(driver, 10);
             Assert.AreEqual("https://github.com/danhumphrey/ThirtyFour.UI", driver.Url);
         }
     }

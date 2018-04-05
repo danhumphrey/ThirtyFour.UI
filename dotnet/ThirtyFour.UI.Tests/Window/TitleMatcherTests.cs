@@ -14,7 +14,7 @@ namespace ThirtyFour.UI.Tests.Window
         {
             try
             {
-                new TitleMatcher("shjksjd", 10).MatchWindow(driver);
+                new TitleMatcher("shjksjd").MatchWindow(driver, 10);
                 Assert.Fail("An exception should have been thrown");
             }
             catch (Exception e)
@@ -26,8 +26,17 @@ namespace ThirtyFour.UI.Tests.Window
         [TestMethod]
         public void WindowSwitchedWhenMatchingTitle()
         {
+
             driver.FindElement(By.LinkText("Popup")).Click();
-            new TitleMatcher(@"GitHub - danhumphrey/ThirtyFour.UI: A Selenium WebDriver (element 34) UI Library for .NET", 10).MatchWindow(driver);
+            new TitleMatcher(@"GitHub - danhumphrey/ThirtyFour.UI: A Selenium (element 34) WebDriver UI Library").MatchWindow(driver, 10);
+            Assert.AreEqual("https://github.com/danhumphrey/ThirtyFour.UI", driver.Url);
+        }
+
+        [TestMethod]
+        public void WindowSwitchedWhenMatchingTitleOfDelayedWindow()
+        {
+            driver.FindElement(By.LinkText("Delayed Popup")).Click();
+            new TitleMatcher(@"GitHub - danhumphrey/ThirtyFour.UI: A Selenium (element 34) WebDriver UI Library").MatchWindow(driver, 10);
             Assert.AreEqual("https://github.com/danhumphrey/ThirtyFour.UI", driver.Url);
         }
     }

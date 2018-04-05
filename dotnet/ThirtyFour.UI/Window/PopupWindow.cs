@@ -59,7 +59,7 @@ namespace ThirtyFour.UI.Window
         {
             this.DefaultHandle = driver.CurrentWindowHandle;
             this.Driver = driver;
-            matcher.MatchWindow(driver);
+            matcher.MatchWindow(driver, 10);
             this.DefaultHandle = driver.CurrentWindowHandle;
         }
 

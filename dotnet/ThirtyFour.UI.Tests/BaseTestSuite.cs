@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
@@ -14,6 +15,7 @@ namespace ThirtyFour.UI.Tests
 
         static IWebDriver DRIVER_INSTANCE;
         protected IWebDriver driver;
+        string windowHandle;
 
         protected string Url {
             get
@@ -30,11 +32,13 @@ namespace ThirtyFour.UI.Tests
             var chromeOptions = new ChromeOptions();
             DRIVER_INSTANCE = new ChromeDriver(chromeService, chromeOptions);
             DRIVER_INSTANCE.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            
         }
 
         public BaseTestSuite()
         {
             driver = DRIVER_INSTANCE;
+            windowHandle = driver.CurrentWindowHandle;
         }
 
         [TestInitialize]
@@ -48,6 +52,18 @@ namespace ThirtyFour.UI.Tests
         [TestCleanup]
         public void TestCleanup()
         {
+            IReadOnlyCollection<String> windows = driver.WindowHandles;
+
+            foreach (String handle in windows)
+            {
+                if (!handle.Equals(windowHandle))
+                {
+                    driver.SwitchTo().Window(handle);
+                    driver.Close();
+                    driver.SwitchTo().Window(windowHandle);
+                }
+            }
+
             if (TestContext.CurrentTestOutcome != UnitTestOutcome.Passed)
             {
                 if (!Directory.Exists(TestContext.TestResultsDirectory))
