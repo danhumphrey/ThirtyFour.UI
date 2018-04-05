@@ -67,6 +67,7 @@
     <Compile Include="Table\StringCellParserTests.cs" />
     <Compile Include="Window\PopupWindowTests.cs" />
     <Compile Include="Table\TableTests.cs" />
+    <Compile Include="Window\UrlMatcherTests.cs" />
     <Compile Include="WrappedElementTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Window\TitleMatcherTests.cs" />
