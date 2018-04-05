@@ -68,6 +68,7 @@
     <Compile Include="Window\IMatcher.cs" />
     <Compile Include="Window\PopupWindow.cs" />
     <Compile Include="Window\TitleMatcher.cs" />
+    <Compile Include="Window\UrlMatcher.cs" />
     <Compile Include="WrappedElement.cs" />
   </ItemGroup>
   <ItemGroup>
