@@ -34,7 +34,6 @@ namespace ThirtyFour.UI.Window
                 foreach (String window in windows)
                 {
                     driver.SwitchTo().Window(window);
-                    Debug.Print(driver.Title);
                     if (driver.Title.Equals(this.title))
                     {
                         return true;
