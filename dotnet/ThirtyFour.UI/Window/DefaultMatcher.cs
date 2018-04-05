@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using OpenQA.Selenium;
 
 namespace ThirtyFour.UI.Window
@@ -13,18 +14,27 @@ namespace ThirtyFour.UI.Window
         /// Switches to the first popup window found
         /// </summary>
         /// <param name="driver">The IWebDriver instance</param>
-        public void MatchWindow(IWebDriver driver)
+        /// <param name="timeoutInSeconds">The number of seconds to keep trying to find the matching popup window</param>
+        public void MatchWindow(IWebDriver driver, double timeoutInSeconds)
         {
-            foreach (string handle in driver.WindowHandles)
-            {
-                if (handle != driver.CurrentWindowHandle)
+            bool found = Utils.RetryUntilTimeout(TimeSpan.FromSeconds(timeoutInSeconds), TimeSpan.FromMilliseconds(100), () => {
+                IReadOnlyCollection<String> windows = driver.WindowHandles;
+                foreach (String window in windows)
                 {
-                    driver.SwitchTo().Window(handle);
-                    return;
+                    if (window != driver.CurrentWindowHandle)
+                    {
+                        driver.SwitchTo().Window(window);
+                        return true;
+                    }
+ 
                 }
-            }
+                return false;
+            });
 
-            throw new Exception("Unable to find a new Window");
+            if (!found)
+            {
+                throw new Exception("Unable to find a new Window");
+            }
         }
     }
 }

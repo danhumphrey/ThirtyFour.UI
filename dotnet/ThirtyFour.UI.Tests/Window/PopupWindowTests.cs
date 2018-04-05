@@ -13,15 +13,10 @@ namespace ThirtyFour.UI.Tests.Window
         public void DriverEqualsCurrentDriver()
         {
             PopupWindow window = null;
-            
-            try
-            {
-                window = new PopupWindow(driver);
-            }
-            catch (Exception)
-            {
-                Assert.AreEqual(driver, window.Driver);
-            }
+
+            driver.FindElement(By.LinkText("Popup")).Click();
+            window = new PopupWindow(driver);
+            Assert.AreEqual(driver, window.Driver);
         }
 
         [TestMethod]
@@ -47,14 +42,9 @@ namespace ThirtyFour.UI.Tests.Window
         {
             PopupWindow window = null;
            
-            try
-            {
-                window = new PopupWindow(driver);
-            }
-            catch (Exception)
-            {
-                Assert.AreEqual(driver.CurrentWindowHandle, window.DefaultHandle);
-            }
+            driver.FindElement(By.LinkText("Popup")).Click();
+            window = new PopupWindow(driver);
+            Assert.AreEqual(driver.CurrentWindowHandle, window.DefaultHandle);
         }
 
         [TestMethod]
