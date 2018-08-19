@@ -31,7 +31,6 @@ namespace ThirtyFour.UI.Tests
             var chromeService = ChromeDriverService.CreateDefaultService();
             var chromeOptions = new ChromeOptions();
             DRIVER_INSTANCE = new ChromeDriver(chromeService, chromeOptions);
-            DRIVER_INSTANCE.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             
         }
 
@@ -44,6 +43,7 @@ namespace ThirtyFour.UI.Tests
         [TestInitialize]
         public void TestSetup()
         {
+            DRIVER_INSTANCE.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             driver.Manage().Cookies.DeleteAllCookies();
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(Url);
