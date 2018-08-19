@@ -40,7 +40,7 @@ namespace ThirtyFour.UI.Tests
             {
                 new CleanWebDriverWait(driver, TimeSpan.FromSeconds(2), iw).Until(ExpectedConditions.ElementExists(By.ClassName("A-Non-existent_Element_which-willNEVER-Exist2")));
             }
-            catch (WebDriverTimeoutException ex)
+            catch (WebDriverTimeoutException)
             {
                 return;
             }
