@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseTestSuite.cs" />
+    <Compile Include="CleanWebDriverWaitTests.cs" />
     <Compile Include="Form\BooleanElementTests.cs" />
     <Compile Include="Form\CheckboxTests.cs" />
     <Compile Include="Table\ChildElementCellParserTests.cs" />
