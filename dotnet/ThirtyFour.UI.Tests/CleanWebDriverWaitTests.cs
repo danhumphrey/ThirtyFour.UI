@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
 using System;
 
 namespace ThirtyFour.UI.Tests
@@ -20,7 +19,7 @@ namespace ThirtyFour.UI.Tests
             DateTime start = DateTime.UtcNow;
 
             driver.FindElement(By.LinkText("3 Second Delay")).Click();
-            new CleanWebDriverWait(driver, TimeSpan.FromSeconds(10), iw).Until(ExpectedConditions.ElementExists(By.ClassName("three-second-delay")));
+            new CleanWebDriverWait(driver, TimeSpan.FromSeconds(10), iw).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.ClassName("three-second-delay")));
 
             DateTime end = DateTime.UtcNow;
             TimeSpan diff = end.Subtract(start);
@@ -38,7 +37,7 @@ namespace ThirtyFour.UI.Tests
 
             try
             {
-                new CleanWebDriverWait(driver, TimeSpan.FromSeconds(2), iw).Until(ExpectedConditions.ElementExists(By.ClassName("A-Non-existent_Element_which-willNEVER-Exist2")));
+                new CleanWebDriverWait(driver, TimeSpan.FromSeconds(2), iw).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.ClassName("A-Non-existent_Element_which-willNEVER-Exist2")));
             }
             catch (WebDriverTimeoutException)
             {
