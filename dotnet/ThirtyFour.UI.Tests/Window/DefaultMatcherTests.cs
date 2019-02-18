@@ -14,7 +14,7 @@ namespace ThirtyFour.UI.Tests.Window
         {
             try
             {
-                new DefaultMatcher().MatchWindow(driver, 10);
+                new DefaultMatcher().MatchWindow(driver, 4);
                 Assert.Fail("An exception should have been thrown");
             }
             catch (Exception e)
@@ -24,11 +24,11 @@ namespace ThirtyFour.UI.Tests.Window
         }
 
         [TestMethod]
-        public void tWindowSwitchedToCorrectWindow()
+        public void WindowSwitchedToCorrectWindow()
         {
       
             driver.FindElement(By.LinkText("Popup")).Click();
-            new DefaultMatcher().MatchWindow(driver, 10);
+            new DefaultMatcher().MatchWindow(driver, 4);
             Assert.AreEqual("https://github.com/danhumphrey/ThirtyFour.UI", driver.Url);
         }
 
@@ -36,7 +36,7 @@ namespace ThirtyFour.UI.Tests.Window
         public void WindowSwitchedWhenMatchingDelayedWindow()
         {
             driver.FindElement(By.LinkText("Delayed Popup")).Click();
-            new DefaultMatcher().MatchWindow(driver, 10);
+            new DefaultMatcher().MatchWindow(driver, 5);
             Assert.AreEqual("https://github.com/danhumphrey/ThirtyFour.UI", driver.Url);
         }
     }

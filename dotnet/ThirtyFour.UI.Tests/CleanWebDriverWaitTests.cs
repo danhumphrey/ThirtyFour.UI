@@ -19,7 +19,7 @@ namespace ThirtyFour.UI.Tests
             DateTime start = DateTime.UtcNow;
 
             driver.FindElement(By.LinkText("3 Second Delay")).Click();
-            new CleanWebDriverWait(driver, TimeSpan.FromSeconds(10), iw).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.ClassName("three-second-delay")));
+            new CleanWebDriverWait(driver, TimeSpan.FromSeconds(4), iw).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.ClassName("three-second-delay")));
 
             DateTime end = DateTime.UtcNow;
             TimeSpan diff = end.Subtract(start);
