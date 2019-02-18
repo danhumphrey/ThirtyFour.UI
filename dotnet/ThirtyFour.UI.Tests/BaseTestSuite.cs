@@ -43,7 +43,7 @@ namespace ThirtyFour.UI.Tests
         [TestInitialize]
         public void TestSetup()
         {
-            DRIVER_INSTANCE.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
             driver.Manage().Cookies.DeleteAllCookies();
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(Url);
