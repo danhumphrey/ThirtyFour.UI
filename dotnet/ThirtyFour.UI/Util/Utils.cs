@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace ThirtyFour.UI
+namespace ThirtyFour.UI.Util
 {
     /// <summary>
     /// Utils class

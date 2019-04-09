@@ -1,8 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using System;
+using ThirtyFour.UI.Util;
 
-namespace ThirtyFour.UI.Tests
+namespace ThirtyFour.UI.Tests.Util
 {
     [TestClass]
     public class CleanWebDriverWaitTests : BaseTestSuite

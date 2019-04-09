@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using OpenQA.Selenium;
+using ThirtyFour.UI.Util;
 
 namespace ThirtyFour.UI.Window
 {

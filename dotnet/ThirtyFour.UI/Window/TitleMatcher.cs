@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
+using ThirtyFour.UI.Util;
 
 namespace ThirtyFour.UI.Window
 {
@@ -28,7 +29,7 @@ namespace ThirtyFour.UI.Window
         public void MatchWindow(IWebDriver driver, double timeoutInSeconds)
         {
             bool found = Utils.RetryUntilTimeout(TimeSpan.FromSeconds(timeoutInSeconds), TimeSpan.FromMilliseconds(100), () => {
-                IReadOnlyCollection<String> windows = driver.WindowHandles;
+                IReadOnlyCollection<string> windows = driver.WindowHandles;
 
                 foreach (String window in windows)
                 {

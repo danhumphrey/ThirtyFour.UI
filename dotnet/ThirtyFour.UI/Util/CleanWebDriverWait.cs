@@ -2,7 +2,7 @@
 using OpenQA.Selenium.Support.UI;
 using System;
 
-namespace ThirtyFour.UI
+namespace ThirtyFour.UI.Util
 {
     /*
      * An extension of WebDriverWait which removes then re-applies the ImplicitWait property on the IWebDriver instance
