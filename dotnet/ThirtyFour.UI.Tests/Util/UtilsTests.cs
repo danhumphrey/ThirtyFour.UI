@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Threading;
+using ThirtyFour.UI.Util;
 
 namespace ThirtyFour.UI.Tests
 {

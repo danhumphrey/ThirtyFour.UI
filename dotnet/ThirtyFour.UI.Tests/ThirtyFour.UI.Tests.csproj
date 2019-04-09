@@ -60,12 +60,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseTestSuite.cs" />
-    <Compile Include="CleanWebDriverWaitTests.cs" />
+    <Compile Include="Util\CleanWebDriverWaitTests.cs" />
     <Compile Include="Form\BooleanElementTests.cs" />
     <Compile Include="Form\CheckboxTests.cs" />
     <Compile Include="Table\ChildElementCellParserTests.cs" />
     <Compile Include="Table\ColumnHeaderCellFinderTests.cs" />
-    <Compile Include="UtilsTests.cs" />
+    <Compile Include="Util\UtilsTests.cs" />
     <Compile Include="Window\DefaultMatcherTests.cs" />
     <Compile Include="Form\FormElementTests.cs" />
     <Compile Include="Form\RadioButtonTests.cs" />

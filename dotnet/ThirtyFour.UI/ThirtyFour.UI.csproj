@@ -51,7 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CleanWebDriverWait.cs" />
+    <Compile Include="Util\CleanWebDriverWait.cs" />
     <Compile Include="Form\BooleanElement.cs" />
     <Compile Include="Form\Checkbox.cs" />
     <Compile Include="Form\FormElement.cs" />
@@ -62,7 +62,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Utils.cs" />
+    <Compile Include="Util\Utils.cs" />
     <Compile Include="Table\ChildElementCellParser.cs" />
     <Compile Include="Table\ColumnHeaderCellFinder.cs" />
     <Compile Include="Table\ICellFinder.cs" />
