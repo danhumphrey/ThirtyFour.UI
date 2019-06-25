@@ -73,7 +73,6 @@ namespace ThirtyFour.UI.Tests
 
             }
 
-            driver.Close();
             driver.Quit();
         }
 
