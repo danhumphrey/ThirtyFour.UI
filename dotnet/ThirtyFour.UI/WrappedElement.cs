@@ -24,20 +24,7 @@ namespace ThirtyFour.UI
         /// <summary>
         /// The parent element or null if no parent exists
         /// </summary>
-        public IWebElement ParentElement
-        {
-            get
-            {
-                return GetAncestorElement("*[1]");
-            }
-
-            protected set
-            {
-                ParentElement1 = value;
-            }
-        }
-
-        public IWebElement ParentElement1 { get; set; }
+        public IWebElement ParentElement => GetAncestorElement("*[1]");
 
         /// <summary>
         /// Constructor
