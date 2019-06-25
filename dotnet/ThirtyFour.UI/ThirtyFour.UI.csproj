@@ -14,4 +14,7 @@
   <ItemGroup>
     <None Remove="app.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Util\" />
+  </ItemGroup>
 </Project>

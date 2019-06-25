@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Util\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Resources\index.html" />
