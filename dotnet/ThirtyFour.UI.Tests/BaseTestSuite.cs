@@ -13,7 +13,8 @@ namespace ThirtyFour.UI.Tests
         [ThreadStatic]
         protected static IWebDriver driver;
 
-        string windowHandle;
+        [ThreadStatic]
+        protected static string windowHandle;
 
         public TestContext TestContext { get; set; }
 
@@ -26,20 +27,11 @@ namespace ThirtyFour.UI.Tests
             }
         }
 
-        public BaseTestSuite()
-        {
-            var chromeService = ChromeDriverService.CreateDefaultService();
-            var chromeOptions = new ChromeOptions();
-            driver = new ChromeDriver(chromeService, chromeOptions);
-            windowHandle = driver.CurrentWindowHandle;
-        }
-
         [TestInitialize]
         public void TestSetup()
         {
-            
-
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
+            driver = DriverFactory.BuildDriver(TestContext.Properties);
+            windowHandle = driver.CurrentWindowHandle;
             driver.Manage().Cookies.DeleteAllCookies();
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(Url);
@@ -49,17 +41,6 @@ namespace ThirtyFour.UI.Tests
         [TestCleanup]
         public void TearDown()
         {
-            IReadOnlyCollection<String> windows = driver.WindowHandles;
-
-            foreach (String handle in windows)
-            {
-                if (!handle.Equals(windowHandle))
-                {
-                    driver.SwitchTo().Window(handle);
-                    driver.Close();
-                    driver.SwitchTo().Window(windowHandle);
-                }
-            }
 
             if (TestContext.CurrentTestOutcome != UnitTestOutcome.Passed)
             {
