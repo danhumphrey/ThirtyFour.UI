@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 
 namespace ThirtyFour.UI.Tests
@@ -15,12 +16,12 @@ namespace ThirtyFour.UI.Tests
 
         }
 
-        [TestMethod]
+        [TestMethod] 
         public void DriverPropertyIsSameInstance()
         {
             var el = driver.FindElement(By.TagName("h1"));
             var wrappedEl = new WrappedElement(el);
-            Assert.AreSame(this.driver, wrappedEl.Driver);
+            Assert.AreSame(driver, wrappedEl.Driver);
         }
 
         [TestMethod]
@@ -41,7 +42,7 @@ namespace ThirtyFour.UI.Tests
             var el = driver.FindElement(By.ClassName("last"));
             var wrappedEl = new WrappedElement(el);
             Assert.AreEqual("footer-id", wrappedEl.GetAncestorElement("footer").GetAttribute("id"));
-           
+
         }
 
         [TestMethod]
