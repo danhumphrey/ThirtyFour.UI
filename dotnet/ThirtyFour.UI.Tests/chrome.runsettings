@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <RunConfiguration>
+    <MaxCpuCount>4</MaxCpuCount>
+  </RunConfiguration>
+  <MSTest>
+    <Parallelize>
+      <Workers>0</Workers>
+      <Scope>MethodLevel</Scope>
+    </Parallelize>
+  </MSTest>
+
+  <TestRunParameters>
+    <Parameter name="browser" value="chrome" />
+    <Parameter name="implicitWaitSeconds" value="2" />
+  </TestRunParameters>
+</RunSettings>
