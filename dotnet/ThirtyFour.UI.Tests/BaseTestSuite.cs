@@ -1,56 +1,53 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 
 namespace ThirtyFour.UI.Tests
 {
-    [TestClass]
-    public abstract class BaseTestSuite
+    public class BaseTestSuite
     {
-        public TestContext TestContext { get; set; }
+        [ThreadStatic]
+        protected static IWebDriver driver;
 
-        static IWebDriver DRIVER_INSTANCE;
-        protected IWebDriver driver;
         string windowHandle;
 
-        protected string Url {
+        public TestContext TestContext { get; set; }
+
+        protected string Url
+        {
             get
             {
-                return Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase), "Resources", "index.html");
+
+                return Path.Combine(Path.GetDirectoryName(typeof(BaseTestSuite).GetTypeInfo().Assembly.GetName().CodeBase), "Resources", "index.html");
             }
-        }
-
-        [AssemblyInitialize]
-        public static void AssemblyInitialize(TestContext testContext)
-        {
-
-            var chromeService = ChromeDriverService.CreateDefaultService();
-            var chromeOptions = new ChromeOptions();
-            DRIVER_INSTANCE = new ChromeDriver(chromeService, chromeOptions);
-            
         }
 
         public BaseTestSuite()
         {
-            driver = DRIVER_INSTANCE;
+            var chromeService = ChromeDriverService.CreateDefaultService();
+            var chromeOptions = new ChromeOptions();
+            driver = new ChromeDriver(chromeService, chromeOptions);
             windowHandle = driver.CurrentWindowHandle;
         }
 
         [TestInitialize]
         public void TestSetup()
         {
+            
+
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
             driver.Manage().Cookies.DeleteAllCookies();
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(Url);
         }
 
+
         [TestCleanup]
-        public void TestCleanup()
+        public void TearDown()
         {
             IReadOnlyCollection<String> windows = driver.WindowHandles;
 
@@ -66,22 +63,19 @@ namespace ThirtyFour.UI.Tests
 
             if (TestContext.CurrentTestOutcome != UnitTestOutcome.Passed)
             {
-                if (!Directory.Exists(TestContext.TestResultsDirectory))
-                {
-                    Directory.CreateDirectory(TestContext.TestResultsDirectory);
-                }
 
                 var screenShot = ((ITakesScreenshot)driver).GetScreenshot();
-                var fileName = TestContext.TestResultsDirectory + "\\Screenshot_" + TestContext.TestName + DateTime.Now.ToString("yyyy-dd-MM-HH-mm-ss") + ".png";
+                var fileName = Path.GetFullPath(Path.Combine("", "Screenshot_" + TestContext.TestName + DateTime.Now.ToString("yyyy-dd-MM-HH-mm-ss") + ".png"));
                 screenShot.SaveAsFile((fileName), ScreenshotImageFormat.Png);
-                TestContext.AddResultFile(fileName);
+                // TestContext.AddResultFile(fileName); Missing in dotnet core https://github.com/Microsoft/testfx/issues/394
+                TestContext.WriteLine($"Screenshot created {fileName}");
+
+
             }
+
+            driver.Close();
+            driver.Quit();
         }
 
-        [AssemblyCleanup]
-        public static void AssemblyCleanup()
-        {
-            DRIVER_INSTANCE.Quit();
-        }
     }
 }
