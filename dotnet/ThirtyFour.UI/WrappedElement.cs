@@ -1,6 +1,7 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Internal;
+﻿using System.Collections.Generic;
 using System.Linq;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Internal;
 
 namespace ThirtyFour.UI
 {
@@ -9,41 +10,16 @@ namespace ThirtyFour.UI
     /// </summary>
     public class WrappedElement
     {
-        private IWebElement element;
-        private IWebDriver driver;
-        private IWebElement parentElement;
-
+        
         /// <summary>
         /// The wrapped WebElement
         /// </summary>
-        public IWebElement Element
-        {
-            get
-            {
-                return element;
-            }
-
-            protected set
-            {
-                element = value;
-            }
-        }
+        public IWebElement Element { get; protected set; }
 
         /// <summary>
         /// The driver instance used to locate the wrapped element
         /// </summary>
-        public IWebDriver Driver
-        {
-            get
-            {
-                return driver;
-            }
-
-            protected set
-            {
-                driver = value;
-            }
-        }
+        public IWebDriver Driver { get; protected set; }
 
         /// <summary>
         /// The parent element or null if no parent exists
@@ -57,9 +33,11 @@ namespace ThirtyFour.UI
 
             protected set
             {
-                parentElement = value;
+                ParentElement1 = value;
             }
         }
+
+        public IWebElement ParentElement1 { get; set; }
 
         /// <summary>
         /// Constructor
@@ -83,7 +61,7 @@ namespace ThirtyFour.UI
         public IWebElement GetAncestorElement(string tagName)
         {
             IWebElement parent = null;
-            var els = Element.FindElements(By.XPath("ancestor::" + tagName));
+            IReadOnlyCollection<IWebElement> els = Element.FindElements(By.XPath("ancestor::" + tagName));
             if (els.Count > 0)
             {
                 parent = els.ElementAt(0);
