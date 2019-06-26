@@ -22,6 +22,7 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Util\" />
+    <Folder Include="Form\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Resources\index.html" />
