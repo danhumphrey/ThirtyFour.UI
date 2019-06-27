@@ -17,5 +17,6 @@
   <ItemGroup>
     <Folder Include="Util\" />
     <Folder Include="Form\" />
+    <Folder Include="Window\" />
   </ItemGroup>
 </Project>
