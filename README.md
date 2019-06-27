@@ -18,8 +18,8 @@ The `RadioButton` class provides functionality specific to `input` elements wher
 ### Form/CheckBox
 The `Checkbox` class provides functionality specific to `input` elements where `type` = `checkbox` 
 
-### Window/PopupWindow
-The `PopupWindow` (and associated classes) provide functionality specific to popup windows.
+### Window/BrowserWindow
+The `BrowserWindow` (and associated classes) provide functionality specific to popups and additional browser windows.
 
 ### Table/TableElement
 The `TableElement` (and associated classes) provide functionality specific to `table` elements.
