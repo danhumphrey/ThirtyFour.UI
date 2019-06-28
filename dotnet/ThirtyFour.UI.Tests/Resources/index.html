@@ -19,11 +19,21 @@
             text-align: center;
         }
     </style>
-    <script>function createElementIn3Seconds() {
+    <script>
+
+        function createElementIn3Seconds() {
             setTimeout(function () {
                 document.getElementById('delayed-elements-container').innerHTML = '<span class="three-second-delay">I was delayed by 3 seconds</span>';
             }, 3000);
-        }</script>
+        }
+
+        function delayedPopupWindow() {
+            window.timeoutId = setTimeout(function() {
+                clearTimeout(window.timeoutId); 
+                window.open('https://github.com/danhumphrey/ThirtyFour.UI', 'thirtyFourWindow' ,'height=460, width=720' );
+            }, 2000);
+        }
+        </script>
 
 </head>
 <body id="test-body">
@@ -99,7 +109,7 @@
     </table>
     <h2>Window</h2>
     <p>Link to <a href="javascript: window.open('https://github.com/danhumphrey/ThirtyFour.UI', 'thirtyFourWindow' ,'height=460, width=720' )">Popup</a> a new window</p>
-    <p>Link to <a href="javascript: window.timeoutId = setTimeout(function() {clearTimeout(window.timeoutId); window.open('https://github.com/danhumphrey/ThirtyFour.UI', 'thirtyFourWindow' ,'height=460, width=720' );}, 2000);">Delayed Popup</a> a new window in 2 seconds</p>
+    <p>Link to <a href="javascript: delayedPopupWindow()">Delayed Popup</a> a new window in 2 seconds</p>
     <h2>Delayed Elements</h2>
     <a href="javascript: createElementIn3Seconds();">3 Second Delay</a>
     <h3>Elements</h3>
