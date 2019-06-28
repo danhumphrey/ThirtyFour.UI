@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using ThirtyFour.UI.Window;
 
 namespace ThirtyFour.UI.Tests.Window
@@ -48,7 +49,7 @@ namespace ThirtyFour.UI.Tests.Window
         {
             driver.FindElement(By.LinkText("Popup")).Click();
             BrowserWindow window = new BrowserWindow(driver);
-            Assert.AreEqual("https://github.com/danhumphrey/ThirtyFour.UI", driver.Url);
+            new WebDriverWait(driver, TimeSpan.FromSeconds(2)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.UrlToBe("https://github.com/danhumphrey/ThirtyFour.UI"));
         }
     }
 }
