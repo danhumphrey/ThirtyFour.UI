@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Compile Remove="Class1.cs" />
+    <Compile Remove="Table\Table.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
@@ -18,5 +19,6 @@
     <Folder Include="Util\" />
     <Folder Include="Form\" />
     <Folder Include="Window\" />
+    <Folder Include="Table\" />
   </ItemGroup>
 </Project>

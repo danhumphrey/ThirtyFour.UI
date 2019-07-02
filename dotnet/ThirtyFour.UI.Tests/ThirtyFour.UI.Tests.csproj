@@ -24,6 +24,7 @@
     <Folder Include="Util\" />
     <Folder Include="Form\" />
     <Folder Include="Window\" />
+    <Folder Include="Table\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Resources\index.html" />
