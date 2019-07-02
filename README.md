@@ -21,6 +21,6 @@ The `Checkbox` class provides functionality specific to `input` elements where `
 ### Window/BrowserWindow
 The `BrowserWindow` (and associated classes) provide functionality specific to popups and additional browser windows.
 
-### Table/TableElement
-The `TableElement` (and associated classes) provide functionality specific to `table` elements.
+### Table/Table
+The `Table` (and associated classes) provide functionality specific to `table` elements.
 
