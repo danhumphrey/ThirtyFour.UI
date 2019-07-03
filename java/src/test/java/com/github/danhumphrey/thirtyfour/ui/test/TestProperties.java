@@ -1,4 +1,4 @@
-package com.github.danhumphrey.test;
+package com.github.danhumphrey.thirtyfour.ui.test;
 
 import java.io.IOException;
 import java.io.InputStream;
