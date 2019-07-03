@@ -406,6 +406,8 @@ ASALocalRun/
 # Local History for Visual Studio
 .localhistory/
 
+########################################################
+# Java
 
 # Compiled class file
 *.class
