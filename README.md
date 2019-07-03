@@ -1,8 +1,8 @@
 # ThirtyFour.UI
 
-A Selenium (element 34) WebDriver UI Library
+<img align="right" src="images/thirtyfour.ui.logo.png">
 
-![ThirtyFour.UI](images/thirtyfour.ui.logo.png)
+A Selenium (element 34) WebDriver UI Library
 
 ## Components
 
@@ -21,6 +21,5 @@ The `Checkbox` class provides functionality specific to `input` elements where `
 ### Window/BrowserWindow
 The `BrowserWindow` (and associated classes) provide functionality specific to popups and additional browser windows.
 
-### Table/TableElement
-The `TableElement` (and associated classes) provide functionality specific to `table` elements.
-
+### Table/Table
+The `Table` (and associated classes) provide functionality specific to `table` elements.
