@@ -31,8 +31,8 @@ public class BaseTestSuite implements AfterEachCallback {
 
 	@BeforeEach
 	void setUp() throws Exception {
+		URL url = getClass().getClassLoader().getResource("com/github/danhumphrey/thirtyfour/ui/test/index.html");
 		WebDriver driver = DriverFactory.buildDriver();
-		URL url = getClass().getClassLoader().getResource("com/github/danhumphrey/test/index.html");
 		driver.get(url.toExternalForm());
 		driverInstance.set(driver);
 	}
@@ -61,7 +61,6 @@ public class BaseTestSuite implements AfterEachCallback {
 			}
 		}
 		getDriver().quit();
-		
 	}
 
 }
