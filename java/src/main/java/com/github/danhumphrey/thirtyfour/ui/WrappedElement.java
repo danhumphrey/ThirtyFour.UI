@@ -10,7 +10,6 @@ import org.openqa.selenium.WrapsDriver;
 
 /**
  * wraps a WebElement to provide specialized functionality
- * @author dhumphrey
  *
  */
 public class WrappedElement {
