@@ -13,6 +13,6 @@ namespace ThirtyFour.UI.Form
         /// Constructor
         /// </summary>
         /// <param name="element">The wrapped element</param>
-        public BooleanElement(IWebElement element) : base(element) { }
+        protected BooleanElement(IWebElement element) : base(element) { }
     }
 }
