@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using OpenQA.Selenium;
 
 namespace ThirtyFour.UI.Table
