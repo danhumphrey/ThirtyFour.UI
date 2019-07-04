@@ -6,7 +6,7 @@ namespace ThirtyFour.UI.Util
     /// <summary>
     /// Utils class
     /// </summary>
-    public class Utils
+    public static class Utils
     {
         /// <summary>
         /// Retries a task every 'interval' milliseconds until timeout or success
