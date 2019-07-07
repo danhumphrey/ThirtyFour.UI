@@ -18,6 +18,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <enable-parallel-tests>false</enable-parallel-tests>
+        <parallel-factor>2</parallel-factor>
     </properties>
 
     <dependencies>
@@ -119,7 +120,7 @@
                     <properties>
                         <configurationParameters>
                             junit.jupiter.execution.parallel.enabled=${enable-parallel-tests}
-                            junit.jupiter.execution.parallel.config.dynamic.factor=1
+                            junit.jupiter.execution.parallel.config.dynamic.factor=${parallel-factor}
                         </configurationParameters>
                     </properties>
                 </configuration>
