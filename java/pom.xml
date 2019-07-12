@@ -125,6 +125,22 @@
                     </properties>
                 </configuration>
             </plugin>
+            <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<version>3.1.1</version>
+			<configuration>
+			  <source>1.7</source>
+			  <docletPath>./vendor/docfx-doclet-1.0-SNAPSHOT-jar-with-dependencies.jar</docletPath>
+              <additionalDependencies>
+	          	<additionalDependency>
+		            <groupId>org.seleniumhq.selenium</groupId>
+		            <artifactId>selenium-java</artifactId>
+		            <version>${selenium.version}</version>
+	            </additionalDependency>
+          </additionalDependencies>
+             </configuration>
+		</plugin>
         </plugins>
     </build>
 </project>
