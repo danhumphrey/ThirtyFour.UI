@@ -10,8 +10,8 @@ import org.openqa.selenium.WebElement;
 public interface CellParser<T> {
 	/**
 	 * 
-	 * @param cell the cell to retrieve the value from
-	 * @return T the generic typed value from the cell
+	 * @param cell the <code>WebElement</code> representing the <code>TD</code> cell to retrieve the value from
+	 * @return T the generic typed value which was parsed from the cell
 	 */
 	public T getValue(WebElement cell);
 }

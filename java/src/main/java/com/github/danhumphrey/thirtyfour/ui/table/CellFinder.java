@@ -10,8 +10,8 @@ import org.openqa.selenium.WebElement;
 public interface CellFinder {
 	/**
 	 * Finds a specific table cell
-	 * @param tableElement the element representing the html table
-	 * @return an element representing the cell
+	 * @param tableElement the <code>WebElement</code> representing the HTML table
+	 * @return a <code>WebElement</code> representing the <code>TD</code> table cell
 	 * @throws NoSuchElementException if the cell cannot be found
 	 */
 	public WebElement findCell(WebElement tableElement) throws NoSuchElementException;

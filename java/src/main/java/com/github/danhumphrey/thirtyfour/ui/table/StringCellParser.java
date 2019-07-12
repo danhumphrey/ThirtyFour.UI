@@ -10,6 +10,7 @@ public class StringCellParser implements CellParser<String> {
 
 	/**
 	 * Gets a string value from a cell
+	 * 
 	 * @param cell the cell to extract the value from
 	 * @return String the cell text
 	 */

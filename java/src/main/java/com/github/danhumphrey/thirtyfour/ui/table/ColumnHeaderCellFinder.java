@@ -20,6 +20,7 @@ public class ColumnHeaderCellFinder implements CellFinder {
 	
 	/**
 	 * The default constructor
+	 * 
 	 * @param findColumnHeader The header of the column in which to look for the findColumnValue
 	 * @param findColumnValue The value to be located within the find column - this identifies the correct row
 	 * @param returnColumnHeader The header of the column to return
@@ -32,6 +33,7 @@ public class ColumnHeaderCellFinder implements CellFinder {
 	
 	/**
 	 * Returns the zero based index/position of a column
+	 * 
 	 * @param columnHeader the header of the column to locate
 	 * @return the position of the column if found
 	 * @throws NoSuchElementException if the column can't be found

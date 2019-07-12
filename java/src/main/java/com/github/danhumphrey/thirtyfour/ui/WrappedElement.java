@@ -9,7 +9,7 @@ import org.openqa.selenium.WrapsDriver;
 
 
 /**
- * wraps a WebElement to provide specialized functionality
+ * The WrappedElement class wraps a <code>WebElement</code> to provide specialized functionality.
  *
  */
 public class WrappedElement {
@@ -19,7 +19,8 @@ public class WrappedElement {
 	
 	/**
 	 * Constructor
-	 * @param element the element to wrap
+	 * 
+	 * @param element the <code>WebElement</code> to wrap
 	 */
 	public WrappedElement(WebElement element) {
 		this.element = element;
@@ -27,33 +28,36 @@ public class WrappedElement {
 	}
 
 	/**
-	 * returns the wrapped element
-	 * @return the wrapped element
+	 * Returns the wrapped element
+	 * 
+	 * @return the wrapped <code>WebElement</code>
 	 */
 	public WebElement getElement() {
 		return this.element;
 	}
 	
 	/**
-	 * returns the driver
-	 * @return the driver instance used to locate this element
+	 * Returns the driver
+	 * 
+	 * @return the <code>WebDriver</code> instance used to locate this element
 	 */
 	public WebDriver getDriver() {
 		return this.driver;
 	}
 	
 	/**
-	 * returns the parent of the wrapped element
-	 * @return the parent WebElement or null if no parent element exists
+	 * Returns the parent of the wrapped element
+	 * 
+	 * @return the parent <code>WebElement</code> or <code>null</code> if no parent element exists
 	 */
 	public WebElement getParentElement() {
 		return this.getAncestorElement("*[1]");
 	}
 	
 	/**
-	 * return the ancestor of the wrapped element filtered by tagName
+	 * Return the ancestor of the wrapped element filtered by <code>tagName</code>
 	 * @param tagName the name of the tag to filter by
-	 * @return the ancestor WebElement or null if no matching parent element exists 
+	 * @return the ancestor <code>WebElement</code> or <code>null</code> if no matching ancestor element exists 
 	 */
 	public WebElement getAncestorElement(String tagName) {
 		WebElement parent = null;

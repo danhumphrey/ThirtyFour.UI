@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 /**
- * Parsers a child element from a table cell
+ * Parses a child element from a table cell
  *
  */
 public class ChildElementCellParser implements CellParser<WebElement> {
@@ -13,6 +13,7 @@ public class ChildElementCellParser implements CellParser<WebElement> {
 	
 	/**
 	 * Constructor
+	 * 
 	 * @param childLocator the locator used to find the child element
 	 */
 	public ChildElementCellParser(By childLocator) {
@@ -20,7 +21,8 @@ public class ChildElementCellParser implements CellParser<WebElement> {
 	}
 		
 	/**
-	 * returns a child element from the cell
+	 * Returns a child element from the cell
+	 * 
 	 * @param cell the cell to parse
 	 * @return WebElement the child element
 	 */
