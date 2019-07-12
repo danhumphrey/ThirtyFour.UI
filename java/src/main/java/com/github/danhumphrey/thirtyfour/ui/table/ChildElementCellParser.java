@@ -21,7 +21,7 @@ public class ChildElementCellParser implements CellParser<WebElement> {
 		
 	/**
 	 * returns a child element from the cell
-	 * @param WebElement the cell to parse
+	 * @param cell the cell to parse
 	 * @return WebElement the child element
 	 */
 	@Override

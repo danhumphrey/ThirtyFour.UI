@@ -47,7 +47,7 @@ public class Table extends WrappedElement{
 	 * @return the value of the cell
 	 * @throws NoSuchElementException if the column or row can't be found
 	 * @see ColumnHeaderCellFinder
-	 * @see Table#getCellValue(ICellFinder, ICellParser)
+	 * {@link Table#getCellValue(CellFinder, CellParser)}
 	 */
 	public String getCellValue(String findColumn, String findValue, String returnColumn) throws NoSuchElementException {
 		CellFinder finder = new ColumnHeaderCellFinder(findColumn, findValue, returnColumn);
@@ -56,11 +56,12 @@ public class Table extends WrappedElement{
 	
 	/**
 	 * Returns a cell value by the data type specified in the generics cellParser
+	 * @param <T> the type returned by the cell parser
 	 * @param cellFinder the strategy used to find the correct cell
 	 * @param cellParser a generics cell parser used to extract the value from the cell
 	 * @return the value of the cell
 	 * @throws NoSuchElementException if the column or row can't be found
-	 * @see {@link Table#getCellValue(String, String, String)}
+	 * {@link Table#getCellValue(String, String, String)}
 	 */
 	public <T> T getCellValue(CellFinder cellFinder, CellParser<T> cellParser) throws NoSuchElementException{
 		WebElement cell = cellFinder.findCell(this.element);
