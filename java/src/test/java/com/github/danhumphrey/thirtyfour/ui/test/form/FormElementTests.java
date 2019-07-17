@@ -49,7 +49,7 @@ public class FormElementTests extends BaseTestSuite {
 
 	
     @Test
-    public void LabelTextWithForAttribute()
+    public void testLabelTextWithForAttribute()
     {
     	WebDriver driver = getDriver();
         WebElement el = driver.findElement(By.id("rviolet"));
