@@ -19,6 +19,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <enable-parallel-tests>false</enable-parallel-tests>
         <parallel-factor>2</parallel-factor>
+        <headless>false</headless>
     </properties>
 
     <dependencies>
@@ -80,6 +81,17 @@
             </activation>
             <properties>
                 <browser>chrome</browser>
+            </properties>
+        </profile>
+        
+        <!-- Active by Default - execute tests in headless mode -->
+        <profile>
+            <id>headless</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+            	<headless>true</headless>
             </properties>
         </profile>
         

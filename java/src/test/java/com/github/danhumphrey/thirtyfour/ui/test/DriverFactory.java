@@ -5,7 +5,9 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class DriverFactory
 {
@@ -18,10 +20,18 @@ public class DriverFactory
         {
         	case "${browser}": // resource filtering not applied
             case "chrome":
-                driver = new ChromeDriver();
+            	ChromeOptions chromeOptions = new ChromeOptions();
+            	if(TestProperties.HEADLESS) {
+            		chromeOptions.addArguments("headless");
+            	}
+                driver = new ChromeDriver(chromeOptions);
                 break;
             case "firefox":
-                driver = new FirefoxDriver();
+            	FirefoxOptions firefoxOptions = new FirefoxOptions();
+            	if(TestProperties.HEADLESS) {
+            		firefoxOptions.addArguments("--headless");
+            	}
+                driver = new FirefoxDriver(firefoxOptions);
                 break;
             default:
                 throw new IllegalArgumentException(String.format("Invalid browser - '%s'", TestProperties.BROWSER));
