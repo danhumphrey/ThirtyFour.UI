@@ -12,6 +12,7 @@
 
   <TestRunParameters>
     <Parameter name="browser" value="firefox" />
+    <Parameter name="headless" value="true" />
     <Parameter name="implicitWaitSeconds" value="2" />
   </TestRunParameters>
 </RunSettings>

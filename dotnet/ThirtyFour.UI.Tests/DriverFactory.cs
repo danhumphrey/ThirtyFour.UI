@@ -13,7 +13,8 @@ namespace ThirtyFour.UI.Tests
             IWebDriver driverInstance;
 
             var browser = properties["browser"];
-
+            var headless = Boolean.Parse(properties["headless"].ToString());
+            
             switch (browser.ToString().ToLower())
             {
                 case "chrome":
@@ -22,6 +23,10 @@ namespace ThirtyFour.UI.Tests
 
                     var chromeService = ChromeDriverService.CreateDefaultService();
                     var chromeOptions = new ChromeOptions();
+                    if(headless)
+                    {
+                        chromeOptions.AddArguments("headless");
+                    }
                     driverInstance = new ChromeDriver(chromeService, chromeOptions);
                     break;
                 case "firefox":
@@ -30,6 +35,10 @@ namespace ThirtyFour.UI.Tests
 
                     var firefoxService = FirefoxDriverService.CreateDefaultService();
                     var firefoxOptions = new FirefoxOptions();
+                    if (headless)
+                    {
+                        firefoxOptions.AddArguments("--headless");
+                    }
                     driverInstance = new FirefoxDriver(firefoxService, firefoxOptions);
                     break;
                 default:
