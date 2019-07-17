@@ -1,10 +1,11 @@
-package com.github.danhumphrey.thirtyfour.ui.form;
+package com.github.danhumphrey.thirtyfour.ui.test.form;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.github.danhumphrey.thirtyfour.ui.form.Checkbox;
 import com.github.danhumphrey.thirtyfour.ui.test.BaseTestSuite;
 
 public class CheckboxTests extends BaseTestSuite {
