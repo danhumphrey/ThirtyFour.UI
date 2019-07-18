@@ -15,7 +15,7 @@ public final class Utils {
      * @param interval the interval in milliseconds
      * @param task the task to attempt
      * @return true if the task completed successfully or false otherwise
-     * @throws Exception
+     * @throws Exception if unable to perform task
      */ 
     public static boolean retryUntilTimeout(long timeout, long interval, Callable<Boolean> task) throws Exception
     {
