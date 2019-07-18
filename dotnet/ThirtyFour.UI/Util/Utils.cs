@@ -14,7 +14,7 @@ namespace ThirtyFour.UI.Util
         /// <param name="timeout">the timeout</param>
         /// <param name="interval">the interval for retrying</param>
         /// <param name="task">the task to retry</param>
-        /// <returns>Boolean - tru if the task succeeded</returns>
+        /// <returns>Boolean - true if the task succeeded</returns>
         public static bool RetryUntilTimeout(TimeSpan timeout, TimeSpan interval, Func<bool> task)
         {
             bool success = false;
