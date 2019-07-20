@@ -19,20 +19,21 @@ namespace ThirtyFour.UI.Tests.Window
         }
 
         [TestMethod]
-        public void DefaultHandleEqualsDriverHandleWhenNoPopupExists()
+        public void ExceptionThrownWhenNoPopupExists()
         {
             BrowserWindow window = null;
             string currentHandle = driver.CurrentWindowHandle;
 
-            driver.FindElement(By.LinkText("Popup")).Click();
-
             try
             {
                 window = new BrowserWindow(driver);
+                Assert.Fail();
             }
-            catch (Exception)
+#pragma warning disable RECS0022 // A catch clause that catches System.Exception and has an empty body
+            catch
+#pragma warning restore RECS0022 // A catch clause that catches System.Exception and has an empty body
             {
-                Assert.AreEqual(currentHandle, window.DefaultHandle);
+               
             }
         }
 
