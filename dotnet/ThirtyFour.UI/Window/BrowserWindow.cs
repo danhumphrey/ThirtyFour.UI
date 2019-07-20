@@ -3,7 +3,7 @@
 namespace ThirtyFour.UI.Window
 {
     /// <summary>
-    /// The BrowserWindow class provides an easy method for dealing with additional browser windows
+    /// The BrowserWindow class provides an easy method for finding and switching to additional browser windows
     /// </summary>
     public class BrowserWindow
 
