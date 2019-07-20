@@ -19,7 +19,7 @@ namespace ThirtyFour.UI.Tests.Window
         }
 
         [TestMethod]
-        public void HandleEqualsDriverHandleWhenNoPopupExists()
+        public void DefaultHandleEqualsDriverHandleWhenNoPopupExists()
         {
             BrowserWindow window = null;
             string currentHandle = driver.CurrentWindowHandle;
@@ -37,7 +37,7 @@ namespace ThirtyFour.UI.Tests.Window
         }
 
         [TestMethod]
-        public void HandleEqualsDriverHandleWhenPopupDoesExist()
+        public void DefaultHandleEqualsDriverHandleWhenPopupDoesExist()
         {
             driver.FindElement(By.LinkText("Popup")).Click();
             BrowserWindow window = new BrowserWindow(driver);
