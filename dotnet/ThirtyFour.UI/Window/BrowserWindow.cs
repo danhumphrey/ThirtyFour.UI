@@ -6,8 +6,8 @@ namespace ThirtyFour.UI.Window
     /// The BrowserWindow class provides an easy method for finding and switching to additional browser windows
     /// </summary>
     public class BrowserWindow
-
     {
+        const double DEFAULT_TIMEOUT_IN_SECONDS = 10;
 
         /// <summary>
         /// The driver instance
@@ -23,7 +23,7 @@ namespace ThirtyFour.UI.Window
         /// Constructor
         /// </summary>
         /// <param name="driver">The IWebDriver instance</param>
-        public BrowserWindow(IWebDriver driver) : this(driver, new DefaultMatcher())
+        public BrowserWindow(IWebDriver driver) : this(driver, new DefaultMatcher(), DEFAULT_TIMEOUT_IN_SECONDS)
         {
         }
 
@@ -32,11 +32,12 @@ namespace ThirtyFour.UI.Window
         /// </summary>
         /// <param name="driver">The IWebDriver instance</param>
         /// <param name="matcher">An instance of IMatcher</param>
-        public BrowserWindow(IWebDriver driver, IMatcher matcher)
+        /// <param name="timeoutInSeconds">The number of seconds before timing out</param>
+        public BrowserWindow(IWebDriver driver, IMatcher matcher, double timeoutInSeconds)
         {
             this.DefaultHandle = driver.CurrentWindowHandle;
             this.Driver = driver;
-            matcher.MatchWindow(driver, 10);
+            matcher.MatchWindow(driver, timeoutInSeconds);
             this.DefaultHandle = driver.CurrentWindowHandle;
         }
 
