@@ -12,6 +12,12 @@ public class BrowserWindow {
 	private String defaultHandle;
 	
 	
+	
+	/**
+	 * Constructor
+	 * 
+	 *  @param driver the <code>WebDriver</code> instance
+	 */
 	public BrowserWindow(WebDriver driver) {
 		this.driver = driver;
 		this.defaultHandle = driver.getWindowHandle();
