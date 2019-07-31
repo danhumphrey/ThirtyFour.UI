@@ -38,11 +38,11 @@ namespace ThirtyFour.UI.Tests.Window
         }
 
         [TestMethod]
-        public void DefaultHandleEqualsDriverHandleWhenPopupDoesExist()
+        public void DefaultHandleNotEqualsDriverHandleWhenPopupDoesExist()
         {
             driver.FindElement(By.LinkText("Popup")).Click();
             BrowserWindow window = new BrowserWindow(driver);
-            Assert.AreEqual(driver.CurrentWindowHandle, window.DefaultHandle);
+            Assert.AreNotEqual(driver.CurrentWindowHandle, window.DefaultHandle);
         }
 
         [TestMethod]

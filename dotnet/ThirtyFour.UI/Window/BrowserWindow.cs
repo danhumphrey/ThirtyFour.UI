@@ -38,7 +38,6 @@ namespace ThirtyFour.UI.Window
             this.DefaultHandle = driver.CurrentWindowHandle;
             this.Driver = driver;
             matcher.MatchWindow(driver, timeoutInSeconds);
-            this.DefaultHandle = driver.CurrentWindowHandle;
         }
 
     }
