@@ -62,24 +62,34 @@ namespace ThirtyFour.UI.Tests.Window
         public void DefaultHandleNotEqualsDriverHandleWhenPopupDoesExist()
         {
             string currentHandle = driver.CurrentWindowHandle;
-
-            driver.FindElement(By.LinkText("Popup")).Click();
-            BrowserWindow window = new BrowserWindow(driver);
-            Assert.AreNotEqual(driver.CurrentWindowHandle, window.DefaultHandle);
-
-            QuitExtraDrivers(currentHandle);
+            try
+            {
+                driver.FindElement(By.LinkText("Popup")).Click();
+                BrowserWindow window = new BrowserWindow(driver);
+                Assert.AreNotEqual(driver.CurrentWindowHandle, window.DefaultHandle);
+            }
+            finally
+            {
+                QuitExtraDrivers(currentHandle);
+            }
+            
         }
 
         [TestMethod]
         public void WindowSwitchesToCorrectWindowWhenNoMatcherIsProvided()
         {
             string currentHandle = driver.CurrentWindowHandle;
-
-            driver.FindElement(By.LinkText("Popup")).Click();
-            BrowserWindow window = new BrowserWindow(driver);
-            new WebDriverWait(driver, TimeSpan.FromSeconds(2)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.UrlToBe("https://github.com/danhumphrey/ThirtyFour.UI"));
-
-            QuitExtraDrivers(currentHandle);
+            try
+            {
+                driver.FindElement(By.LinkText("Popup")).Click();
+                BrowserWindow window = new BrowserWindow(driver);
+                new WebDriverWait(driver, TimeSpan.FromSeconds(2)).Until(SeleniumExtras.WaitHelpers.ExpectedConditions.UrlToBe("https://github.com/danhumphrey/ThirtyFour.UI"));
+            }
+            finally
+            {
+                QuitExtraDrivers(currentHandle);
+            }
+            
         }
     }
 }
