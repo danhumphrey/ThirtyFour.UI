@@ -17,7 +17,7 @@ public class TitleMatcherTests extends BaseTestSuite {
 		String currentHandle = driver.getWindowHandle();
 
 		try {
-			new TitleMatcher("shjksjd").matchWindow(driver, 4);
+			new TitleMatcher("shjksjd").matchWindow(driver, 1000);
 			Assertions.fail("An exception should have been thrown");
 		} catch (Exception e) {
 			Assertions.assertEquals("Unable to find a matching window", e.getMessage());
