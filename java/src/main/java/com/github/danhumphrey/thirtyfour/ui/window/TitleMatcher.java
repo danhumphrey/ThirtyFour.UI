@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import com.github.danhumphrey.thirtyfour.ui.util.Utils;
 
 /**
- * The DefaultMatcher matches the first other browser window it finds
+ * The TitleMatcher matches the first browser window it finds with a matching title
  *
  */
 public class TitleMatcher implements Matcher {
