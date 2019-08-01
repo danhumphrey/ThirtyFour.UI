@@ -48,7 +48,7 @@ namespace ThirtyFour.UI.Window
 
             if (!found)
             {
-                throw new Exception("Unable to find Window");
+                throw new Exception("Unable to find matching window");
             }
         }
     }

@@ -19,7 +19,7 @@ namespace ThirtyFour.UI.Tests.Window
             }
             catch (Exception e)
             {
-                Assert.AreEqual("Unable to find Window", e.Message);
+                Assert.AreEqual("Unable to find matching window", e.Message);
             }
         }
 
