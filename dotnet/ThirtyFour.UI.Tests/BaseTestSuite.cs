@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -22,6 +23,20 @@ namespace ThirtyFour.UI.Tests
             {
 
                 return Path.Combine(Path.GetDirectoryName(typeof(BaseTestSuite).GetTypeInfo().Assembly.GetName().CodeBase), "Resources", "index.html");
+            }
+        }
+
+        protected void QuitExtraDrivers(String currentHandle)
+        {
+            ReadOnlyCollection<string> handles = driver.WindowHandles;
+
+            foreach (String handle in handles)
+            {
+                if (!handle.Equals(currentHandle))
+                {
+                    driver.SwitchTo().Window(handle);
+                    driver.Quit();
+                }
             }
         }
 

@@ -10,8 +10,10 @@ namespace ThirtyFour.UI.Tests.Window
     {
 
         [TestMethod]
-        public void ExceptionThrownWhenNoMatchingTitle()
+        public void ExceptionThrownWhenNoMatchingUrl()
         {
+            string currentHandle = driver.CurrentWindowHandle;
+
             try
             {
                 new UrlMatcher("shjksjd").MatchWindow(driver, 4);
@@ -21,23 +23,46 @@ namespace ThirtyFour.UI.Tests.Window
             {
                 Assert.AreEqual("Unable to find Window", e.Message);
             }
+            finally
+            {
+                QuitExtraDrivers(currentHandle);
+            }
         }
 
         [TestMethod]
-        public void WindowSwitchedWhenMatchingTitle()
+        public void WindowSwitchedWhenMatchingUrl()
         {
+            string currentHandle = driver.CurrentWindowHandle;
 
-            driver.FindElement(By.LinkText("Popup")).Click();
-            new UrlMatcher(@"https://github.com/danhumphrey/ThirtyFour.UI").MatchWindow(driver, 4);
-            Assert.AreEqual("https://github.com/danhumphrey/ThirtyFour.UI", driver.Url);
+            try
+            {
+
+                driver.FindElement(By.LinkText("Popup")).Click();
+                new UrlMatcher(@"https://github.com/danhumphrey/ThirtyFour.UI").MatchWindow(driver, 4);
+                Assert.AreEqual("https://github.com/danhumphrey/ThirtyFour.UI", driver.Url);
+            }
+            finally
+            {
+                QuitExtraDrivers(currentHandle);
+            }
         }
 
+
         [TestMethod]
-        public void WindowSwitchedWhenMatchingTitleOfDelayedWindow()
+        public void WindowSwitchedWhenMatchingUrlOfDelayedWindow()
         {
-            driver.FindElement(By.LinkText("Delayed Popup")).Click();
-            new UrlMatcher(@"https://github.com/danhumphrey/ThirtyFour.UI").MatchWindow(driver, 5);
-            Assert.AreEqual("https://github.com/danhumphrey/ThirtyFour.UI", driver.Url);
+            string currentHandle = driver.CurrentWindowHandle;
+
+            try
+            {
+                driver.FindElement(By.LinkText("Delayed Popup")).Click();
+                new UrlMatcher(@"https://github.com/danhumphrey/ThirtyFour.UI").MatchWindow(driver, 5);
+                Assert.AreEqual("https://github.com/danhumphrey/ThirtyFour.UI", driver.Url);
+            }
+            finally
+            {
+                QuitExtraDrivers(currentHandle);
+            }
         }
     }
 }

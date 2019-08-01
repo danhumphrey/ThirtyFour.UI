@@ -10,19 +10,7 @@ namespace ThirtyFour.UI.Tests.Window
     [TestClass]
     public class WindowTests : BaseTestSuite
     {
-        private void QuitExtraDrivers(String currentHandle)
-        {
-            ReadOnlyCollection<String> handles = driver.WindowHandles;
-
-            foreach (String handle in handles)
-            {
-                if (!handle.Equals(currentHandle))
-                {
-                    driver.SwitchTo().Window(handle);
-                    driver.Quit();
-                }
-            }
-        }
+        
 
         [TestMethod]
         public void DriverEqualsCurrentDriver()
