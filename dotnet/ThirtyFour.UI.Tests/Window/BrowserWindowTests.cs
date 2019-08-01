@@ -71,7 +71,7 @@ namespace ThirtyFour.UI.Tests.Window
         }
 
         [TestMethod]
-        public void WindowSwitchesToCorrectWindowWhenNoFinderIsProvided()
+        public void WindowSwitchesToCorrectWindowWhenNoMatcherIsProvided()
         {
             string currentHandle = driver.CurrentWindowHandle;
 
