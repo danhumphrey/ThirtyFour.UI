@@ -28,6 +28,8 @@ namespace ThirtyFour.UI.Window
         /// <param name="timeoutInSeconds">The number of seconds to keep trying to find the matching popup window</param>
         public void MatchWindow(IWebDriver driver, double timeoutInSeconds)
         {
+            string currentWindowHandle = driver.CurrentWindowHandle;
+
             bool found = Utils.RetryUntilTimeout(TimeSpan.FromSeconds(timeoutInSeconds), TimeSpan.FromMilliseconds(100), () => {
                 IReadOnlyCollection<String> windows = driver.WindowHandles;
 
@@ -38,6 +40,7 @@ namespace ThirtyFour.UI.Window
                     {
                         return true;
                     }
+                    driver.SwitchTo().Window(currentWindowHandle);
                 }
                 return false;
             });
