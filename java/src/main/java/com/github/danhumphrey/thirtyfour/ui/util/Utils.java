@@ -17,11 +17,11 @@ public final class Utils {
      * @return true if the task completed successfully or false otherwise
      * @throws Exception if unable to perform task
      */ 
-    public static boolean retryUntilTimeout(long timeout, long interval, Callable<Boolean> task) throws Exception
+    public static boolean retryUntilTimeout(long timeoutInMilliseconds, long interval, Callable<Boolean> task) throws Exception
     {
         boolean success = false;
         long elapsed = 0;
-        while ((!success) && (elapsed < timeout)) {
+        while ((!success) && (elapsed < timeoutInMilliseconds)) {
             Thread.sleep(interval);
             elapsed += interval;
             success = task.call();

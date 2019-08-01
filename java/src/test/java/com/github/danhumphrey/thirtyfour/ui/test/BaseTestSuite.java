@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Optional;
+import java.util.Set;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.AfterEachCallback;
@@ -29,6 +30,18 @@ public class BaseTestSuite implements AfterEachCallback {
 		return driverInstance.get();
 	}
 
+	protected void quitExtraDrivers(String currentHandle) {
+		WebDriver driver = getDriver();
+		Set<String> handles = driver.getWindowHandles();
+    	for(String handle : handles) {
+    		
+    		if(!handle.equals(currentHandle)) {
+    			driver.switchTo().window(handle);
+    			driver.quit();
+    		}
+    	}
+	}
+	
 	@BeforeEach
 	void setUp() throws Exception {
 		URL url = getClass().getClassLoader().getResource("com/github/danhumphrey/thirtyfour/ui/test/index.html");

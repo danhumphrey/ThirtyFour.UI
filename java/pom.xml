@@ -69,7 +69,6 @@
             </activation>
             <properties>
                 <enable-parallel-tests>true</enable-parallel-tests>
-                <excluded-groups>SINGLE_THREAD_ONLY</excluded-groups>
             </properties>
         </profile>
         
@@ -128,7 +127,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.version}</version>
                 <configuration>
-                    <excludedGroups>${excluded-groups}</excludedGroups>
+                	<excludedGroups>SINGLE_THREAD</excludedGroups>
                     <properties>
                         <configurationParameters>
                             junit.jupiter.execution.parallel.enabled=${enable-parallel-tests}

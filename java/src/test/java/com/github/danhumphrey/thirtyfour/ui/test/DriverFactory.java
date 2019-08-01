@@ -19,6 +19,8 @@ public class DriverFactory
         switch (TestProperties.BROWSER)
         {
         	case "${browser}": // resource filtering not applied
+        		driver = new ChromeDriver();
+                break;
             case "chrome":
             	ChromeOptions chromeOptions = new ChromeOptions();
             	if(TestProperties.HEADLESS) {
