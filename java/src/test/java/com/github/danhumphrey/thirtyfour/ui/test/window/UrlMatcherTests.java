@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.github.danhumphrey.thirtyfour.ui.test.BaseTestSuite;
-import com.github.danhumphrey.thirtyfour.ui.window.TitleMatcher;
 import com.github.danhumphrey.thirtyfour.ui.window.UrlMatcher;
 
 public class UrlMatcherTests extends BaseTestSuite {
@@ -48,6 +47,7 @@ public class UrlMatcherTests extends BaseTestSuite {
     public void testWindowSwitchedWhenMatchingUrlOfDelayedWindow() throws Exception
     {
     	WebDriver driver = getDriver();
+    
 		String currentHandle = driver.getWindowHandle();
 		
         driver.findElement(By.linkText("Delayed Popup")).click();
@@ -60,3 +60,7 @@ public class UrlMatcherTests extends BaseTestSuite {
 		}
     }
 }
+
+
+
+

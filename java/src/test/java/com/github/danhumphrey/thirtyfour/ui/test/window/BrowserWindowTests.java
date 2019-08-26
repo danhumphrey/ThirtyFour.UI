@@ -1,7 +1,5 @@
 package com.github.danhumphrey.thirtyfour.ui.test.window;
 
-import java.util.Set;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
